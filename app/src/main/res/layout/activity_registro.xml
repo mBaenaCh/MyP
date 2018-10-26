@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vdanielmora.myp.Controladores.Registro">
+
+    <EditText
+        android:id="@+id/correoRegistro"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="pepit.perez@udea.edu.co"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="278dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginStart="53dp"
+        android:fontFamily="monospace"
+        android:text="Correo instutucional"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="278dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="Contraseña"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correoRegistro"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <EditText
+        android:id="@+id/contraRegistro"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:layout_editor_absoluteY="220dp" />
+
+    <Button
+        android:id="@+id/crearCuentaBtn"
+        android:layout_width="195dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginStart="95dp"
+        android:text="Crear Cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="415dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/contraConfirmar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="46dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="278dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="Confirmar Contraseña"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        app:layout_constraintTop_toBottomOf="@+id/contraRegistro"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="297dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/contraConfirmar"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="355dp" />
+</android.support.constraint.ConstraintLayout>
