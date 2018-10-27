@@ -26,6 +26,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     private static final String TABLA_USUARIO = "usuario";
     private static final String TABLA_MATERIA = "materia";
     private static final String TABLA_PROFESOR = "profesor";
+    private static final String TABLA_COMENTARIO_USUARIO = "comentario_profesor";
+    private static final String TABLA_MATERIA_PROFESOR = "materia_profesor";
 
     /* ----- COLUMNAS QUE COMPONEN LA TABLA USUARIO -----
      *
@@ -52,6 +54,13 @@ public class BaseDatos extends SQLiteOpenHelper {
     private static final String COLUMNA_PROFESOR_ID = "profesor_id";
     private static final String COLUMNA_PROFESOR_NOMBRE = "profesor_nombre";
 
+    /* ----- COLUMNAS QUE COMPONEN LA TABLA MATERIA PROFESOR -----
+     *
+     *
+     */
+    private static final String COLUMNA_MP_ID_MATERIA = "mp_materia_id";
+    private static final String COLUMNA_MP_ID_PROFESOR = "mp_profesor_id";
+
 
 
     //Query para la creacion de la tabla de usuario
@@ -72,6 +81,11 @@ public class BaseDatos extends SQLiteOpenHelper {
     private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+ " ("+
             COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_PROFESOR_NOMBRE+" TEXT"+")";
+
+    //Query para la creacion de la tabla materia profesor
+    private String CREAR_TABLA_MP = "CREATE TABLE "+TABLA_MATERIA_PROFESOR+ " ("+
+            COLUMNA_MP_ID_MATERIA+" TEXT,"+
+            COLUMNA_MP_ID_PROFESOR+" TEXT"+")";
 
     private String DROP_TABLE = "DROP TABLE IF EXISTS "+NOMBRE_BASEDATOS;
 
