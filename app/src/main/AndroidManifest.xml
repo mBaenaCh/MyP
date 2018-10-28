@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controladores.ProfesorPerfil" />
+        <activity android:name=".Controladores.PerfilProfesor" />
         <activity android:name=".Controladores.Busqueda" />
         <activity android:name=".Controladores.PerfilMateria" />
         <activity android:name=".Controladores.ListaProfesor" />

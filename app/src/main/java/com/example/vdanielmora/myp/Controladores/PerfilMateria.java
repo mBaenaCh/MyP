@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,10 +12,6 @@ import android.widget.Toast;
 
 import com.example.vdanielmora.myp.Modelo.Materia;
 import com.example.vdanielmora.myp.R;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 public class PerfilMateria extends AppCompatActivity {
 
@@ -35,7 +30,7 @@ public class PerfilMateria extends AppCompatActivity {
         mGrupo = (TextView) findViewById(R.id.txtPMGrupo);
         mHorario = (TextView) findViewById(R.id.txtPMHorario);
         mAula = (TextView) findViewById(R.id.txtPMAula);
-        btnRegresar = (Button) findViewById(R.id.btnRegresar);
+        btnRegresar = (Button) findViewById(R.id.btnRegresarListaM);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
