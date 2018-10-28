@@ -32,8 +32,8 @@ public class Busqueda extends AppCompatActivity {
         setContentView(R.layout.activity_busqueda);
         btnMateria = (Button)findViewById(R.id.btnMateria);
         btnProfesor= (Button)findViewById(R.id.btnProfesor);
-        materia = (EditText)findViewById(R.id.Materia);
-        profesor=(EditText)findViewById(R.id.Profesor);
+        materia = (EditText)findViewById(R.id.txtMateria);
+        profesor = (EditText)findViewById(R.id.txtProfesor);
 
     }
 

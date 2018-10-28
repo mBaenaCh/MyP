@@ -19,6 +19,7 @@ public class PerfilProfesor extends AppCompatActivity {
     private TextView mNombre, mFacultad;
     private Button btnRegresar;
     private ListView mLista;
+    private Profesor profesor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class PerfilProfesor extends AppCompatActivity {
             }
         });
 
-        Profesor profesor = new Profesor();
+        profesor = new Profesor();
 
         Intent intent = getIntent();
         String mensaje=intent.getStringExtra(ListaProfesor.EXTRA_MESSAGE);

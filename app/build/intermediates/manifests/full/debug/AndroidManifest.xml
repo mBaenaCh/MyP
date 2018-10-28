@@ -23,13 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.vdanielmora.myp.Controladores.ProfesorPerfil" />
+        <activity android:name="com.example.vdanielmora.myp.Controladores.PerfilProfesor" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.Busqueda" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.PerfilMateria" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.ListaProfesor" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.Registro" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.ListadoMaterias" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.CrearMaterias" />
+        <activity android:name="com.example.vdanielmora.myp.Controladores.CrearProfesores" />
 
         <meta-data
             android:name="android.support.VERSION"

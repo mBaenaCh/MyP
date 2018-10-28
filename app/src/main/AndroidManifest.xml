@@ -22,7 +22,7 @@
         <activity android:name=".Controladores.ListaProfesor" />
         <activity android:name=".Controladores.Registro" />
         <activity android:name=".Controladores.ListadoMaterias" />
-        <activity android:name=".Controladores.CrearMaterias"></activity>
+        <activity android:name=".Controladores.CrearMaterias" />
     </application>
 
 </manifest>
