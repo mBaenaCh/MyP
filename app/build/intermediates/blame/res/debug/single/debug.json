@@ -1512,6 +1512,10 @@
         "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2cbcd55a134a195aba44ec5bbc76f98f\\res\\color\\abc_search_url_text.xml"
     },
     {
+        "merged": "C:\\Users\\user\\Myp\\MyP\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_crear_profesores.xml.flat",
+        "source": "C:\\Users\\user\\Myp\\MyP\\app\\src\\main\\res\\layout\\activity_crear_profesores.xml"
+    },
+    {
         "merged": "C:\\Users\\user\\Myp\\MyP\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\user\\Myp\\MyP\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },

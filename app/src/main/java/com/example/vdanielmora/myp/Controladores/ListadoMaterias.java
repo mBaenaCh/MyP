@@ -1,24 +1,17 @@
 package com.example.vdanielmora.myp.Controladores;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.vdanielmora.myp.Modelo.Materia;
-import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 import com.example.vdanielmora.myp.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListadoMaterias extends AppCompatActivity {
 
@@ -26,7 +19,6 @@ public class ListadoMaterias extends AppCompatActivity {
 
     private ListView mLista;
     private ArrayList<String> lista;
-    private BaseDatos baseDatos = new BaseDatos(this);
     private ArrayAdapter adapter;
     private Button btnRegresar;
 
@@ -35,15 +27,15 @@ public class ListadoMaterias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_materias);
-        mLista = (ListView) findViewById(R.id.lista);
-        btnRegresar = (Button) findViewById(R.id.btnRegresarBusqueda);
-        Intent intent= getIntent();
+        mLista = (ListView) findViewById(R.id.listaM);
+        btnRegresar = (Button) findViewById(R.id.btnRegresarBusquedaM);
+        Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if(extras!= null){
-            lista = extras.getStringArrayList("registrosEncontrados");
+            lista = extras.getStringArrayList("registrosEncontradosM");
         }else {
 
-            Intent noDatos = new Intent(getApplicationContext(),Busqueda.class);
+            Intent noDatos = new Intent(this ,Busqueda.class);
             startActivity(noDatos);
         }
 
@@ -52,6 +44,7 @@ public class ListadoMaterias extends AppCompatActivity {
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
         mLista.setAdapter(adapter);
 
+        //Evento para ir al perfil de la materia que se eligio de la lista
         mLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

@@ -7,13 +7,15 @@ public class Profesor {
     private int id;
     private String nombre;
     private ArrayList <Materia> materias;
+    private String facultad;
 
     public Profesor() {
     }
 
-    public Profesor(int id, String nombre) {
+    public Profesor(int id, String nombre, String facultad) {
         this.id = id;
         this.nombre = nombre;
+        this.facultad = facultad;
         materias = new ArrayList<>();
     }
 
@@ -33,11 +35,24 @@ public class Profesor {
         this.nombre = nombre;
     }
 
+    public String getFacultad() {
+        return facultad;
+    }
+
+    public void setFacultad (String facultad){
+        this.facultad = facultad;
+    }
+
     public ArrayList<Materia> getMaterias() {
         return materias;
     }
 
     public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
+    }
+
+    @Override
+    public String toString() {
+        return getNombre()+","+getFacultad();
     }
 }

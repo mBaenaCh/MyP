@@ -41,13 +41,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btnProfesor" />
 
     <EditText
-        android:id="@+id/Profesor"
+        android:id="@+id/txtProfesor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="344dp"
-        android:layout_marginEnd="84dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="344dp"
         android:ems="10"
         android:hint="Nombre Profesor"
         android:inputType="textPersonName"
@@ -57,13 +57,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/Materia"
+        android:id="@+id/txtMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:layout_marginEnd="85dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="100dp"
         android:ems="10"
         android:hint="Nombre Materia"
         android:inputType="textPersonName"
@@ -94,13 +94,14 @@
         android:id="@+id/btnMateria"
         android:layout_width="215dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="84dp"
         android:layout_marginStart="85dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="28dp"
         android:onClick="onClick"
         android:text="Buscar Materia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
         app:layout_constraintVertical_bias="0.538" />

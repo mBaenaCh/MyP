@@ -21,8 +21,10 @@ public class Busqueda extends AppCompatActivity {
     private Button btnProfesor;
     private EditText materia;
     private EditText profesor;
-    private ArrayList<String> lista;
-    private ArrayList<String> listaEncontrados;
+    private ArrayList<String> listaM;
+    private ArrayList<String> listaP;
+    private ArrayList<String> listaEncontradosM;
+    private ArrayList<String> listaEncontradosP;
     private BaseDatos baseDatos = new BaseDatos(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +32,8 @@ public class Busqueda extends AppCompatActivity {
         setContentView(R.layout.activity_busqueda);
         btnMateria = (Button)findViewById(R.id.btnMateria);
         btnProfesor= (Button)findViewById(R.id.btnProfesor);
-        materia = (EditText)findViewById(R.id.Materia);
-        profesor=(EditText)findViewById(R.id.Profesor);
-        lista = llenadoArrayListText(baseDatos.obtenerTodasLasMaterias());
+        materia = (EditText)findViewById(R.id.txtMateria);
+        profesor = (EditText)findViewById(R.id.txtProfesor);
 
     }
 
@@ -40,19 +41,39 @@ public class Busqueda extends AppCompatActivity {
 
         switch (v.getId()){
 
+
+            /*
+             * OPCION PARA BUSCAR MATERIAS
+             */
+
             case R.id.btnMateria:
-                listaEncontrados = llenadoEncontrado(lista, materia.getText().toString());
+
+                //Cargo la lista de materias que existen en la base de datos
+                listaM = llenadoArrayListText(baseDatos.obtenerTodasLasMaterias());
+                /*Comparo los elementos de la lista de amterias en la base de datos para luego mostrar en la lista de encontrados
+                 *todos aquellos que son similares
+                 */
+                listaEncontradosM = llenadoEncontrado(listaM, materia.getText().toString());
                 Intent intentMateria = new Intent(getApplicationContext(),ListadoMaterias.class );
-                intentMateria.putStringArrayListExtra("registrosEncontrados",listaEncontrados);
+                intentMateria.putStringArrayListExtra("registrosEncontradosM",listaEncontradosM);
                 startActivity(intentMateria);
+                break;
+
+            /*
+             * OPCION PARA BUSCAR PROFESORES
+             */
+
+            case R.id.btnProfesor:
+                listaP = llenadoArrayListText(baseDatos.obtenerTodosLosProfesores());
+                listaEncontradosP = llenadoEncontrado(listaP, profesor.getText().toString());
+                Intent intentProfesor = new Intent(getApplicationContext(),ListaProfesor.class);
+                intentProfesor.putStringArrayListExtra("registrosEncontradosP",listaEncontradosP);
+                startActivity(intentProfesor);
                 break;
         }
 
 
     }
-
-
-
 
     public ArrayList llenadoArrayListText(List lista){
         ArrayList<String> listTexto = new ArrayList<>();
@@ -65,6 +86,7 @@ public class Busqueda extends AppCompatActivity {
     }
 
     public ArrayList llenadoEncontrado(List lista, String dato){
+        //Se crea una nueva lista en l
         ArrayList<String> listTexto = new ArrayList<>();
 
         for(int i =0; i<lista.size();i++){
