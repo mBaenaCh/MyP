@@ -1,189 +1,185 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\user\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f57bce5477c33ac9949edeb7cdb4412f\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a2740b2908448883762d45314c13af26/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:17:1-30:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:3:5-42
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:1-29:12
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:5:5-27:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\user\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f57bce5477c33ac9949edeb7cdb4412f\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\user\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f57bce5477c33ac9949edeb7cdb4412f\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:24:5-28:19
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:5:5-26:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a2740b2908448883762d45314c13af26/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a2740b2908448883762d45314c13af26/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:11:9-40
 activity#com.example.vdanielmora.myp.Controladores.MYPmain
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:12:9-18:20
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:12:19-56
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:12:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:16:27-74
 activity#com.example.vdanielmora.myp.Controladores.PerfilProfesor
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:19:9-66
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:19:9-66
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:19:19-63
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:19:19-63
 activity#com.example.vdanielmora.myp.Controladores.Busqueda
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:20:9-60
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:20:9-60
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:20:19-57
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:20:19-57
 activity#com.example.vdanielmora.myp.Controladores.PerfilMateria
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:21:9-65
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:21:9-65
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:21:19-62
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:21:19-62
 activity#com.example.vdanielmora.myp.Controladores.ListaProfesor
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:22:9-65
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:22:9-65
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:22:19-62
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:22:19-62
 activity#com.example.vdanielmora.myp.Controladores.Registro
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:23:9-60
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:23:9-60
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:23:19-57
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:23:19-57
 activity#com.example.vdanielmora.myp.Controladores.ListadoMaterias
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:24:9-67
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:24:9-67
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:24:19-64
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:24:19-64
 activity#com.example.vdanielmora.myp.Controladores.CrearMaterias
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:25:9-65
+ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:25:9-65
 	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:25:19-62
-activity#com.example.vdanielmora.myp.Controladores.CrearProfesores
-ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:26:9-76
-	android:name
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml:26:19-64
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml:25:19-62
 uses-sdk
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\user\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f57bce5477c33ac9949edeb7cdb4412f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\user\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f57bce5477c33ac9949edeb7cdb4412f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a2740b2908448883762d45314c13af26/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a2740b2908448883762d45314c13af26/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Myp\MyP\app\src\main\AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		ADDED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
+		INJECTED from /home/estudiantes/mateo.baena/MyP/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\1a3dc1cf953e8279b4cd77888f6cf35d\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\781f7a03a94adb91db81cbd991fd6c9c\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\f924f91fbf60d92b02aa39ac8db96c76\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\43fddf867460be5c9c8bdda3a6969d8b\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\439c8df9bd773bdb4451ecf1a736ee9f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\d56f5f713c2b3767f8308126488d0b9f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\eca0b9d836793d3b5d105f93020337bb\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\0f783bf9516d5df42da7de43cdbb0fe2\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b68d4b091f8a657b0b4c656b11adb0de\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2238eeaa50997d157040184cc4a075e/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1860d99b3144a3b0cfb02383da779076/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/765c678b2c17ad10146aa102fa13381f/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/fb4ab2376d6ccef2bcc371457c54a7d5/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/0d7df54699f76a108a10b70cac1b0127/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/4a7be063b7ae238ad633359eb52da7e4/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/e8c09c9e37195077d5e9acf143e64a0a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/53018d246c1397bd24f6ef2711326708/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\2cbcd55a134a195aba44ec5bbc76f98f\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/AndroidManifest.xml:27:13-51
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\user\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\7d01947164e96c7f7280092247a3edb4\AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4764ff12f2805c57a3687dfa2e802f7a/AndroidManifest.xml:26:13-58
