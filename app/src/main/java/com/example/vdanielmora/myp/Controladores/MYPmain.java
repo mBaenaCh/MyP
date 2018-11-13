@@ -17,7 +17,7 @@ public class MYPmain extends AppCompatActivity {
 
 
    private  EditText mCorreo, mContra;
-   private  Button registro,inicio, btnMateria;
+   private  Button registro,inicio, btnMateria,btnProfesor;
    private BaseDatos baseDatos = new BaseDatos(this);
    private ValidacionEntradas validacionEntradas;
     @Override
@@ -28,6 +28,7 @@ public class MYPmain extends AppCompatActivity {
         mContra = (EditText) findViewById(R.id.mContra);
         registro = (Button)findViewById(R.id.registrarseBtn);
         btnMateria = (Button) findViewById(R.id.btnMateria);
+        btnProfesor= (Button)findViewById(R.id.btnProfesor);
         inicio = (Button)findViewById(R.id.loginBtn);
         validacionEntradas = new ValidacionEntradas(this);
 
@@ -55,6 +56,14 @@ public class MYPmain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CrearMaterias.class);
+                startActivity(intent);
+            }
+        });
+
+        btnProfesor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CrearProfesor.class);
                 startActivity(intent);
             }
         });

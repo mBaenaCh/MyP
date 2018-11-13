@@ -23,6 +23,10 @@
         <activity android:name=".Controladores.Registro" />
         <activity android:name=".Controladores.ListadoMaterias" />
         <activity android:name=".Controladores.CrearMaterias" />
+        <activity
+            android:name=".Controladores.CrearProfesor"
+            android:label="@string/title_activity_crear_profesor"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -27,10 +27,13 @@ public class ListadoMaterias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_materias);
+
         mLista = (ListView) findViewById(R.id.listaM);
         btnRegresar = (Button) findViewById(R.id.btnRegresarBusquedaM);
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+
         if(extras!= null){
             lista = extras.getStringArrayList("registrosEncontradosM");
         }else {

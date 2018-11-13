@@ -31,6 +31,7 @@ public class ListaProfesor extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+
         if(extras!= null){
             lista = extras.getStringArrayList("registrosEncontradosP");
         }else {

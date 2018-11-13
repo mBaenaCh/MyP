@@ -1,16 +1,35 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\user\\Myp\\MyP\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/estudiantes/vdaniel.mora/MyP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2cbcd55a134a195aba44ec5bbc76f98f\\res\\values-land\\values-land.xml",
+                    "source": "/home/estudiantes/vdaniel.mora/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f0ac6ea8fd41376a7808c4846668467e/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
                         "startOffsets": "55,125,189,260",
                         "endColumns": "69,63,70,67",
                         "endOffsets": "120,184,255,323"
+                    }
+                },
+                {
+                    "source": "/home/estudiantes/vdaniel.mora/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9f0d9b1fd860c8a4ed1221c004ed4b9c/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "232"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "328",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "505"
                     }
                 }
             ]

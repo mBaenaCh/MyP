@@ -49,18 +49,18 @@ public class PerfilProfesor extends AppCompatActivity {
     }
 
     private Profesor deStringAObjeto(String mensaje){
-        Profesor m = new Profesor();
-        String nombre, facultad;
+        Profesor p = new Profesor();
+        String id,nombre, facultad;
         int primeraComa;
 
         primeraComa = mensaje.indexOf(",");
 
         nombre = mensaje.substring(0,primeraComa);
-        m.setNombre(nombre);
+        p.setNombre(nombre);
 
-        facultad = mensaje.substring(primeraComa+1,mensaje.length()-1);
-        m.setFacultad(facultad);
+        facultad = mensaje.substring(primeraComa+1,mensaje.length());
+        p.setFacultad(facultad);
 
-        return m;
+        return p;
     }
 }

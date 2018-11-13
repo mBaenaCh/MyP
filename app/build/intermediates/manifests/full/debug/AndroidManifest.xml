@@ -15,6 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.vdanielmora.myp.Controladores.MYPmain" >
             <intent-filter>
@@ -30,7 +31,10 @@
         <activity android:name="com.example.vdanielmora.myp.Controladores.Registro" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.ListadoMaterias" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.CrearMaterias" />
-        <activity android:name="com.example.vdanielmora.myp.Controladores.CrearProfesores" />
+        <activity
+            android:name="com.example.vdanielmora.myp.Controladores.CrearProfesor"
+            android:label="@string/title_activity_crear_profesor"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="android.support.VERSION"

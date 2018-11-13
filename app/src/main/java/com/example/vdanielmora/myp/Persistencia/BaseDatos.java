@@ -80,7 +80,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Query para la creacion de la tabla profesor
     private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+ " ("+
-            COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+            COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY,"+
             COLUMNA_PROFESOR_NOMBRE+" TEXT,"+
             COLUMNA_PROFESOR_FACULTAD+" TEXT"+")";
 
@@ -323,6 +323,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         ContentValues valores = new ContentValues();
 
+        valores.put(COLUMNA_PROFESOR_ID,profesor.getId());
         valores.put(COLUMNA_PROFESOR_NOMBRE,profesor.getNombre());
         valores.put(COLUMNA_PROFESOR_FACULTAD,profesor.getFacultad());
 
