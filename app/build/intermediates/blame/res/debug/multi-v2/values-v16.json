@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "/home/estudiantes/mateo.baena/MyP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\user\\Myp\\MyP\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\b68d4b091f8a657b0b4c656b11adb0de\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2cbcd55a134a195aba44ec5bbc76f98f\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6ded4336fba3502bbac8546e685fca65/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

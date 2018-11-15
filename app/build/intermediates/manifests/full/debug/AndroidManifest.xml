@@ -30,6 +30,7 @@
         <activity android:name="com.example.vdanielmora.myp.Controladores.Registro" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.ListadoMaterias" />
         <activity android:name="com.example.vdanielmora.myp.Controladores.CrearMaterias" />
+        <activity android:name="com.example.vdanielmora.myp.Controladores.CrearProfesor" />
 
         <meta-data
             android:name="android.support.VERSION"
