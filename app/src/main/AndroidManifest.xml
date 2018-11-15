@@ -23,6 +23,7 @@
         <activity android:name=".Controladores.Registro" />
         <activity android:name=".Controladores.ListadoMaterias" />
         <activity android:name=".Controladores.CrearMaterias" />
+        <activity android:name=".Controladores.CrearProfesor"></activity>
     </application>
 
 </manifest>
