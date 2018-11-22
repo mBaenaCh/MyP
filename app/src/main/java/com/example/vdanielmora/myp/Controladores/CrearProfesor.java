@@ -14,7 +14,7 @@ import com.example.vdanielmora.myp.R;
 
 public class CrearProfesor extends AppCompatActivity {
 
-    private EditText mNombre, mFacultad, mId;
+    private EditText mId, mNombre, mApellido, mFacultad;
     private Button btnCrear;
     private ValidacionEntradas validacionEntradas;
     private BaseDatos baseDatos = new BaseDatos(this);
@@ -26,6 +26,7 @@ public class CrearProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_crear_profesor);
         mId = (EditText) findViewById(R.id.txtIdP);
         mNombre = (EditText) findViewById(R.id.txtNombreP);
+        mApellido = (EditText) findViewById(R.id.txtApellidoP);
         mFacultad = (EditText) findViewById(R.id.txtFacultadP);
         btnCrear = (Button) findViewById(R.id.btnCrearP);
 
@@ -48,11 +49,15 @@ public class CrearProfesor extends AppCompatActivity {
         if(!validacionEntradas.validacionCamposVacios(mNombre, "Ingrese el nombre del profesor")){
             return;
         }
+        if(!validacionEntradas.validacionCamposVacios(mApellido,"Ingrese el apellido del profesor")){
+            return;
+        }
         if(!validacionEntradas.validacionCamposVacios(mFacultad, "Ingrese la facultad a la cual pertenece el profesor")){
             return;
         }else{
             profesor.setId(Integer.parseInt(mId.getText().toString().trim()));
             profesor.setNombre(mNombre.getText().toString().trim());
+            profesor.setApellido(mApellido.getText().toString().trim());
             profesor.setFacultad(mFacultad.getText().toString().trim());
             baseDatos.añadirProfesor(profesor);
         }

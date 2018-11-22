@@ -12,11 +12,9 @@ import android.widget.Toast;
 import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.R;
 
-import org.w3c.dom.Text;
-
 public class PerfilProfesor extends AppCompatActivity {
 
-    private TextView mNombre, mFacultad;
+    private TextView mNombre, mApellido,mFacultad;
     private Button btnRegresar;
     private ListView mLista;
     private Profesor profesor;
@@ -26,13 +24,15 @@ public class PerfilProfesor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profesor_perfil);
         mNombre = (TextView) findViewById(R.id.txtPPNombre);
-        mFacultad = (TextView) findViewById(R.id.txtPPFacultad);
+        mApellido = (TextView) findViewById(R.id.txtPPApellido);
+        mFacultad = (TextView) findViewById(R.id.txtPPApellido);
         btnRegresar = (Button) findViewById(R.id.btnRegresarListaP);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListaProfesor.class);
+                startActivity(intent);
             }
         });
 
@@ -44,21 +44,26 @@ public class PerfilProfesor extends AppCompatActivity {
         profesor = deStringAObjeto(mensaje);
 
         mNombre.setText("Nombre: "+profesor.getNombre());
+        mApellido.setText("Apellido: "+profesor.getApellido());
         mFacultad.setText("Facultad: "+profesor.getFacultad());
 
     }
 
     private Profesor deStringAObjeto(String mensaje){
         Profesor m = new Profesor();
-        String nombre, facultad;
-        int primeraComa;
+        String nombre, apellido,facultad;
+        int primeraComa, segundaComa;
 
         primeraComa = mensaje.indexOf(",");
+        segundaComa = mensaje.indexOf(",",primeraComa+1);
 
         nombre = mensaje.substring(0,primeraComa);
         m.setNombre(nombre);
 
-        facultad = mensaje.substring(primeraComa+1,mensaje.length()-1);
+        apellido = mensaje.substring(primeraComa+1, segundaComa);
+        m.setApellido(apellido);
+
+        facultad = mensaje.substring(segundaComa+1,mensaje.length());
         m.setFacultad(facultad);
 
         return m;

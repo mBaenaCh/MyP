@@ -1,5 +1,9 @@
 package com.example.vdanielmora.myp.Modelo;
 
+import android.content.Context;
+
+import com.example.vdanielmora.myp.Persistencia.BaseDatos;
+
 import java.util.ArrayList;
 
 public class Materia {
@@ -11,9 +15,14 @@ public class Materia {
     private String horario;
     private String aula;
     private ArrayList<Comentario> comentarios;
+    private Context context;
 
     public Materia(){
 
+    }
+
+    public Materia(Context context){
+        this.context = context;
     }
 
     public Materia(int id, String nombre, String grupo, String horario, String aula) {
@@ -68,6 +77,10 @@ public class Materia {
 
     public void setComentarios(ArrayList<Comentario> comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public void añadirComentario(Comentario comentario){
+        this.comentarios.add(comentario);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.vdanielmora.myp.Controladores;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,10 +17,13 @@ import com.example.vdanielmora.myp.R;
 public class MYPmain extends AppCompatActivity {
 
 
+
    private  EditText mCorreo, mContra;
    private  Button registro,inicio, btnMateria, btnProfesor;
    private BaseDatos baseDatos = new BaseDatos(this);
    private ValidacionEntradas validacionEntradas;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,7 @@ public class MYPmain extends AppCompatActivity {
             public void onClick(View view) {
 
                 validacionDesdeBD();
+
 
             }
         });
@@ -93,6 +98,10 @@ public class MYPmain extends AppCompatActivity {
 
 
 
+    }
+
+    public String getNombreUsuario(){
+        return this.mCorreo.getText().toString().trim();
     }
 
 
