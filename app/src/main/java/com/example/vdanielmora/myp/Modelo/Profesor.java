@@ -6,15 +6,17 @@ public class Profesor {
 
     private int id;
     private String nombre;
+    private String apellido;
     private ArrayList <Materia> materias;
     private String facultad;
 
     public Profesor() {
     }
 
-    public Profesor(int id, String nombre, String facultad) {
+    public Profesor(int id, String nombre, String apellido, String facultad) {
         this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.facultad = facultad;
         materias = new ArrayList<>();
     }
@@ -35,6 +37,14 @@ public class Profesor {
         this.nombre = nombre;
     }
 
+    public String getApellido(){
+        return apellido;
+    }
+
+    public void setApellido(String apellido){
+        this.apellido = apellido;
+    }
+
     public String getFacultad() {
         return facultad;
     }
@@ -53,6 +63,6 @@ public class Profesor {
 
     @Override
     public String toString() {
-        return getNombre()+","+getFacultad();
+        return getNombre()+","+getApellido()+","+getFacultad();
     }
 }

@@ -9,8 +9,7 @@ public class Comentario {
     public Comentario() {
     }
 
-    public Comentario(int id, String texto, String nombreUsuario) {
-        this.id = id;
+    public Comentario(String texto, String nombreUsuario) {
         this.texto = texto;
         this.nombreUsuario = nombreUsuario;
     }

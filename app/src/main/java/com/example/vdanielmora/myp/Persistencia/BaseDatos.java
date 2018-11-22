@@ -55,6 +55,7 @@ public class BaseDatos extends SQLiteOpenHelper {
      */
     private static final String COLUMNA_PROFESOR_ID = "profesor_id";
     private static final String COLUMNA_PROFESOR_NOMBRE = "profesor_nombre";
+    private static final String COLUMNA_PROFESOR_APELLIDO = "profesor_apellido";
     private static final String COLUMNA_PROFESOR_FACULTAD = "profesor_facultad";
 
     /* ----- COLUMNAS QUE COMPONEN LA TABLA COMENTARIO -----
@@ -99,6 +100,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+ " ("+
             COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_PROFESOR_NOMBRE+" TEXT,"+
+            COLUMNA_PROFESOR_APELLIDO+" TEXT,"+
             COLUMNA_PROFESOR_FACULTAD+" TEXT"+")";
 
     //Query para la creacion de la tabla comentario
@@ -110,27 +112,25 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Query para la creacion de la tabla materia profesor
     private String CREAR_TABLA_MP = "CREATE TABLE "+TABLA_MATERIA_PROFESOR+ " ("+
-            COLUMNA_MP_ID_MATERIA+" INTEGER,"+
-            COLUMNA_MP_ID_PROFESOR+" INTEGER"+
-            COLUMNA_MP_ID_MATERIA+ " REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+
-            COLUMNA_MP_ID_PROFESOR+" REFERENCES "+TABLA_PROFESOR+"("+COLUMNA_PROFESOR_ID+")"+")";
+            COLUMNA_MP_ID_MATERIA+" INTEGER REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+"),"+
+            COLUMNA_MP_ID_PROFESOR+" INTEGER REFERENCES "+TABLA_PROFESOR+"("+COLUMNA_PROFESOR_ID+")"+")";
+
 
     private String CREAR_TABLA_CM = "CREATE TABLE "+TABLA_COMENTARIO_MATERIA+ " ("+
-            COLUMNA_CM_ID_COMENTARIO+" INTEGER, "+
-            COLUMNA_CM_ID_MATERIA+" INTEGER"+
-            COLUMNA_CM_ID_COMENTARIO+" REFERENCES "+TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+")"+
-            COLUMNA_CM_ID_MATERIA+" REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+")";
+            COLUMNA_CM_ID_COMENTARIO+ " INTEGER REFERENCES " +TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+"), "+
+            COLUMNA_CM_ID_MATERIA+" INTEGER REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+")";
 
     private String DROP_TABLE = "DROP TABLE IF EXISTS "+NOMBRE_BASEDATOS;
 
 
     public BaseDatos(Context context){
+
         super(context,NOMBRE_BASEDATOS,null,VERSION_BASEDATOS);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.setForeignKeyConstraintsEnabled(true);
+
         db.execSQL(CREAR_TABLA_USUARIO);
         db.execSQL(CREAR_TABLA_MATERIA);
         db.execSQL(CREAR_TABLA_PROFESOR);
@@ -139,6 +139,12 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(CREAR_TABLA_MP);
         db.execSQL("INSERT INTO "+TABLA_MATERIA+" ("+COLUMNA_MATERIA_NOMBRE+", "+COLUMNA_MATERIA_GRUPO+", "+COLUMNA_MATERIA_HORARIO+", "+COLUMNA_MATERIA_AULA+") VALUES ('calculo integral','1','MJ12-2','19-212')");
 
+    }
+
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
     }
 
     @Override
@@ -361,8 +367,8 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         valores.put(COLUMNA_PROFESOR_ID,profesor.getId());
         valores.put(COLUMNA_PROFESOR_NOMBRE,profesor.getNombre());
+        valores.put(COLUMNA_PROFESOR_APELLIDO,profesor.getApellido());
         valores.put(COLUMNA_PROFESOR_FACULTAD,profesor.getFacultad());
-
 
         try {
             baseDatos.insertOrThrow(TABLA_PROFESOR, null, valores);
@@ -376,13 +382,13 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Metodo para retornar la lista de profesores que estan registrados en la base de datos
     public List<Profesor> obtenerTodosLosProfesores(){
         //Arreglo de columnas a obtener
-        String[]columnas={
+        String[]columnas= {
                 COLUMNA_PROFESOR_ID,
                 COLUMNA_PROFESOR_NOMBRE,
                 COLUMNA_PROFESOR_FACULTAD
         };
 
-        String sortOrder = COLUMNA_PROFESOR_NOMBRE +" ASC";
+        String sortOrder = COLUMNA_PROFESOR_ID +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
         List<Profesor> listaProfesores = new ArrayList<Profesor>();
@@ -404,6 +410,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
                 profesor.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_ID))));
                 profesor.setNombre(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_NOMBRE)));
+                profesor.setApellido(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_APELLIDO)));
                 profesor.setFacultad(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_FACULTAD)));
 
 

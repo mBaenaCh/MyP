@@ -72,7 +72,6 @@ public class Busqueda extends AppCompatActivity {
                 break;
         }
 
-
     }
 
     public ArrayList llenadoArrayListText(List lista){
