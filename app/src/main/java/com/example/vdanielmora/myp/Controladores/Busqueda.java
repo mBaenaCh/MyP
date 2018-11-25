@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.vdanielmora.myp.Modelo.Materia;
 import com.example.vdanielmora.myp.Modelo.Profesor;
@@ -25,8 +26,8 @@ public class Busqueda extends AppCompatActivity {
     private EditText profesor;
     private ArrayList listaM;
     private ArrayList listaP;
-    private ArrayList listaEncontradosM;
-    private ArrayList<String> listaEncontradosP;
+    private ArrayList<Materia> listaEncontradosM;
+    private ArrayList<Profesor> listaEncontradosP;
     private BaseDatos baseDatos = new BaseDatos(this);
 
     @Override
@@ -51,8 +52,12 @@ public class Busqueda extends AppCompatActivity {
 
             case R.id.btnMateria:
 
+                String mensaje = baseDatos.datosPrecargados();
+
+                Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+
                 //Cargo la lista de materias que existen en la base de datos
-                listaM = llenadoArrayList(baseDatos.obtenerTodasLasMaterias());
+                listaM = llenadoArrayListMateria(baseDatos.obtenerTodasLasMaterias());
                 /*Comparo los elementos de la lista de materias en la base de datos para luego mostrar en la lista de encontrados
                  *todos aquellos que son similares
                  */
@@ -71,7 +76,7 @@ public class Busqueda extends AppCompatActivity {
              */
 
             case R.id.btnProfesor:
-                listaP = llenadoArrayList(baseDatos.obtenerTodosLosProfesores());
+                listaP = llenadoArrayListProfesor(baseDatos.obtenerTodosLosProfesores());
 
                 listaEncontradosP = llenadoEncontradoProfesores(listaP, profesor.getText().toString());
 
@@ -86,9 +91,9 @@ public class Busqueda extends AppCompatActivity {
 
     }
 
-    public ArrayList llenadoArrayList(List lista){
-        //Recibimos una lista de cualquier tipologia
-        ArrayList<Object> list = new ArrayList<>();
+    public ArrayList llenadoArrayListMateria(ArrayList<Materia> lista){
+
+        ArrayList<Materia> list = new ArrayList<>();
 
         for(int i =0; i<lista.size();i++){
             list.add(lista.get(i));
@@ -97,9 +102,17 @@ public class Busqueda extends AppCompatActivity {
         return list;
     }
 
-    public ArrayList llenadoEncontradoProfesores(List<Profesor> lista, String dato){
+    public ArrayList llenadoArrayListProfesor(ArrayList<Profesor> lista){
+        ArrayList<Profesor> list = new ArrayList<>();
+        for(int i=0; i<lista.size();i++){
+            list.add(lista.get(i));
+        }
+        return list;
+    }
+
+    public ArrayList llenadoEncontradoProfesores(ArrayList<Profesor> lista, String dato){
         //Se crea una nueva lista de tipo "objeto"
-        ArrayList<Object> listaDeEncontrados = new ArrayList<>();
+        ArrayList<Profesor> listaDeEncontrados = new ArrayList<>();
 
         //Se recorre la lista que se recibio como parametro
         for(int i =0; i<lista.size();i++){
@@ -118,9 +131,9 @@ public class Busqueda extends AppCompatActivity {
         return listaDeEncontrados;
     }
 
-    public ArrayList llenadoEncontradoMaterias(List<Materia> lista, String dato){
+    public ArrayList llenadoEncontradoMaterias(ArrayList<Materia> lista, String dato){
         //Se crea una nueva lista de tipo "objeto"
-        ArrayList<Object> listaDeEncontrados = new ArrayList<>();
+        ArrayList<Materia> listaDeEncontrados = new ArrayList<>();
 
         //Se recorre la lista que se recibio como parametro
         for(int i = 0; i<lista.size();i++){
@@ -137,9 +150,5 @@ public class Busqueda extends AppCompatActivity {
         //Retornamos la lista de objetos "materia" que corresponden a los encontrados segun el dato ingresado
         return listaDeEncontrados;
     }
-
-
-
-
 
 }
