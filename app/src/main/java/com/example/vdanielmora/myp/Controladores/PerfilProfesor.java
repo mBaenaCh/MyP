@@ -25,8 +25,18 @@ public class PerfilProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_profesor_perfil);
         mNombre = (TextView) findViewById(R.id.txtPPNombre);
         mApellido = (TextView) findViewById(R.id.txtPPApellido);
-        mFacultad = (TextView) findViewById(R.id.txtPPApellido);
+        mFacultad = (TextView) findViewById(R.id.txtPPFacultad);
         btnRegresar = (Button) findViewById(R.id.btnRegresarListaP);
+        Bundle objetoEnviado = getIntent().getExtras();
+        profesor = null;
+
+        if(objetoEnviado!=null){
+            profesor = (Profesor) objetoEnviado.getSerializable("profesorElegido");
+            String mensaje = profesor.toString();
+            mNombre.setText("Nombre: "+profesor.getNombre());
+            mFacultad.setText("Facultad: "+profesor.getFacultad());
+            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+        }
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,16 +46,6 @@ public class PerfilProfesor extends AppCompatActivity {
             }
         });
 
-        profesor = new Profesor();
-
-        Intent intent = getIntent();
-        String mensaje=intent.getStringExtra(ListaProfesor.EXTRA_MESSAGE);
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
-        profesor = deStringAObjeto(mensaje);
-
-        mNombre.setText("Nombre: "+profesor.getNombre());
-        mApellido.setText("Apellido: "+profesor.getApellido());
-        mFacultad.setText("Facultad: "+profesor.getFacultad());
 
     }
 

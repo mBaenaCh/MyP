@@ -1,8 +1,9 @@
 package com.example.vdanielmora.myp.Modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor implements Serializable {
 
     private int id;
     private String nombre;
@@ -65,4 +66,6 @@ public class Profesor {
     public String toString() {
         return getNombre()+","+getApellido()+","+getFacultad();
     }
+
+
 }

@@ -55,7 +55,6 @@ public class BaseDatos extends SQLiteOpenHelper {
      */
     private static final String COLUMNA_PROFESOR_ID = "profesor_id";
     private static final String COLUMNA_PROFESOR_NOMBRE = "profesor_nombre";
-    private static final String COLUMNA_PROFESOR_APELLIDO = "profesor_apellido";
     private static final String COLUMNA_PROFESOR_FACULTAD = "profesor_facultad";
 
     /* ----- COLUMNAS QUE COMPONEN LA TABLA COMENTARIO -----
@@ -100,7 +99,6 @@ public class BaseDatos extends SQLiteOpenHelper {
     private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+ " ("+
             COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_PROFESOR_NOMBRE+" TEXT,"+
-            COLUMNA_PROFESOR_APELLIDO+" TEXT,"+
             COLUMNA_PROFESOR_FACULTAD+" TEXT"+")";
 
     //Query para la creacion de la tabla comentario
@@ -367,7 +365,6 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         valores.put(COLUMNA_PROFESOR_ID,profesor.getId());
         valores.put(COLUMNA_PROFESOR_NOMBRE,profesor.getNombre());
-        valores.put(COLUMNA_PROFESOR_APELLIDO,profesor.getApellido());
         valores.put(COLUMNA_PROFESOR_FACULTAD,profesor.getFacultad());
 
         try {
@@ -410,7 +407,6 @@ public class BaseDatos extends SQLiteOpenHelper {
 
                 profesor.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_ID))));
                 profesor.setNombre(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_NOMBRE)));
-                profesor.setApellido(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_APELLIDO)));
                 profesor.setFacultad(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_FACULTAD)));
 
 
@@ -486,7 +482,5 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         return listaComentarios;
     }
-
-
 
 }

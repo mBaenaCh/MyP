@@ -50,8 +50,20 @@ public class PerfilMateria extends AppCompatActivity {
         mLista = (ListView) findViewById(R.id.listaComentarios);
         validacionEntradas = new ValidacionEntradas(this);
 
-        comentario = new Comentario();
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
+        materia = null;
+        Bundle objetoRecibido = getIntent().getExtras();
+
+        if(objetoRecibido!=null) {
+            materia = (Materia) objetoRecibido.getSerializable("objetoElegido");
+            String mensaje = materia.toString();
+            mNombre.setText("Nombre: "+materia.getNombre());
+            mGrupo.setText("Grupo: "+materia.getGrupo());
+            mHorario.setText("Horario: "+materia.getHorario());
+            mAula.setText("Aula: "+materia.getAula());
+            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+        }
+
+
         btnAñadirComentario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,17 +83,10 @@ public class PerfilMateria extends AppCompatActivity {
             }
         });
 
-        materia = new Materia();
 
-        Intent intent = getIntent();
-        String mensaje = intent.getStringExtra(ListadoMaterias.EXTRA_MESSAGE);
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
-        materia = deStringAObjeto(mensaje);
 
-        mNombre.setText(materia.getNombre());
-        mGrupo.setText("Grupo: "+materia.getGrupo());
-        mHorario.setText("Horario: "+materia.getHorario());
-        mAula.setText("Aula: "+materia.getAula());
+
+
 
     }
 

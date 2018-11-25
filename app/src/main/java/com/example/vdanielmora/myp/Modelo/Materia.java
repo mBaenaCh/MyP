@@ -4,9 +4,10 @@ import android.content.Context;
 
 import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Materia {
+public class Materia implements Serializable {
 
 
     private int id;

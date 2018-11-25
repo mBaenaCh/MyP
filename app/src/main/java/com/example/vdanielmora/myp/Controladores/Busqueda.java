@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.vdanielmora.myp.Modelo.Materia;
+import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 import com.example.vdanielmora.myp.R;
 
@@ -21,11 +23,12 @@ public class Busqueda extends AppCompatActivity {
     private Button btnProfesor;
     private EditText materia;
     private EditText profesor;
-    private ArrayList<String> listaM;
-    private ArrayList<String> listaP;
-    private ArrayList<String> listaEncontradosM;
+    private ArrayList listaM;
+    private ArrayList listaP;
+    private ArrayList listaEncontradosM;
     private ArrayList<String> listaEncontradosP;
     private BaseDatos baseDatos = new BaseDatos(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +52,18 @@ public class Busqueda extends AppCompatActivity {
             case R.id.btnMateria:
 
                 //Cargo la lista de materias que existen en la base de datos
-                listaM = llenadoArrayListText(baseDatos.obtenerTodasLasMaterias());
-                /*Comparo los elementos de la lista de amterias en la base de datos para luego mostrar en la lista de encontrados
+                listaM = llenadoArrayList(baseDatos.obtenerTodasLasMaterias());
+                /*Comparo los elementos de la lista de materias en la base de datos para luego mostrar en la lista de encontrados
                  *todos aquellos que son similares
                  */
-                listaEncontradosM = llenadoEncontrado(listaM, materia.getText().toString());
-                Intent intentMateria = new Intent(getApplicationContext(),ListadoMaterias.class );
-                intentMateria.putStringArrayListExtra("registrosEncontradosM",listaEncontradosM);
+                listaEncontradosM = llenadoEncontradoMaterias(listaM, materia.getText().toString());
+
+                Intent intentMateria = new Intent(getApplicationContext(), ListadoMaterias.class);
+                Bundle bundleM = new Bundle();
+                bundleM.putSerializable("objetosM", listaEncontradosM);
+                intentMateria.putExtras(bundleM);
                 startActivity(intentMateria);
+
                 break;
 
             /*
@@ -64,43 +71,71 @@ public class Busqueda extends AppCompatActivity {
              */
 
             case R.id.btnProfesor:
-                listaP = llenadoArrayListText(baseDatos.obtenerTodosLosProfesores());
-                listaEncontradosP = llenadoEncontrado(listaP, profesor.getText().toString());
+                listaP = llenadoArrayList(baseDatos.obtenerTodosLosProfesores());
+
+                listaEncontradosP = llenadoEncontradoProfesores(listaP, profesor.getText().toString());
+
                 Intent intentProfesor = new Intent(getApplicationContext(),ListaProfesor.class);
-                intentProfesor.putStringArrayListExtra("registrosEncontradosP",listaEncontradosP);
+                Bundle bundleP = new Bundle();
+                bundleP.putSerializable("objetosP",listaEncontradosP);
+                intentProfesor.putExtras(bundleP);
                 startActivity(intentProfesor);
+
                 break;
         }
 
     }
 
-    public ArrayList llenadoArrayListText(List lista){
-        ArrayList<String> listTexto = new ArrayList<>();
+    public ArrayList llenadoArrayList(List lista){
+        //Recibimos una lista de cualquier tipologia
+        ArrayList<Object> list = new ArrayList<>();
 
         for(int i =0; i<lista.size();i++){
-            listTexto.add(lista.get(i).toString());
+            list.add(lista.get(i));
         }
 
-        return listTexto;
+        return list;
     }
 
-    public ArrayList llenadoEncontrado(List lista, String dato){
-        //Se crea una nueva lista en l
-        ArrayList<String> listTexto = new ArrayList<>();
+    public ArrayList llenadoEncontradoProfesores(List<Profesor> lista, String dato){
+        //Se crea una nueva lista de tipo "objeto"
+        ArrayList<Object> listaDeEncontrados = new ArrayList<>();
 
+        //Se recorre la lista que se recibio como parametro
         for(int i =0; i<lista.size();i++){
-            String mensaje = (String) lista.get(i);
-            int  primeraComa = mensaje.indexOf(",");
-            String nombre = mensaje.substring(0,primeraComa).toLowerCase();
+            //Del elemento en la posicion "i", que es un objeto profesor
+            //Retornamos el dato que este objeto tiene como "nombre"
+            String nombre = lista.get(i).getNombre();
+            //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
             if(nombre.equals(dato.toLowerCase())){
-
-                listTexto.add(mensaje);
+            //Si es el caso entonces lo añadimos a la nueva lista de objetos encontrados de tipo "profesor"
+                listaDeEncontrados.add(lista.get(i));
 
             }
-
+            //De lo contrario seguimos iterando
         }
+        //Retornamos la lista de objetos "profesor" que corresponde a los encontrados segun el dato ingresado
+        return listaDeEncontrados;
+    }
 
-        return listTexto;
+    public ArrayList llenadoEncontradoMaterias(List<Materia> lista, String dato){
+        //Se crea una nueva lista de tipo "objeto"
+        ArrayList<Object> listaDeEncontrados = new ArrayList<>();
+
+        //Se recorre la lista que se recibio como parametro
+        for(int i = 0; i<lista.size();i++){
+            //Del elemento en la posicion "i", que es un objeto materia
+            //Retornamos el dato que este objeto tiene como "nombre"
+            String nombre = lista.get(i).getNombre();
+            //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
+            if(nombre.equals(dato.toLowerCase())){
+                //Si es el caso entonces l oañadimos a la nueva lista de objetos encontrados de tipo "materia"
+                listaDeEncontrados.add(lista.get(i));
+            }
+        //De lo contrario seguimos iterando
+        }
+        //Retornamos la lista de objetos "materia" que corresponden a los encontrados segun el dato ingresado
+        return listaDeEncontrados;
     }
 
 
