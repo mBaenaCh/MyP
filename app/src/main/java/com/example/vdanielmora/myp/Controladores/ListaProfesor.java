@@ -9,18 +9,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.R;
 
 import java.util.ArrayList;
 
 public class ListaProfesor extends AppCompatActivity {
-
-    public static final String EXTRA_MESSAGE = "com.example.vdanielmora.myp.controladores.MESSAGE";
-
     private ListView mLista;
-    private ArrayList<String> lista;
+    private ArrayList<String> listaImprimible;
     private ArrayAdapter adapter;
     private Button btnRegresar;
+    private ArrayList<Profesor> listaObjetos;
+    private Profesor profesorElegido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +28,32 @@ public class ListaProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_lista_profesor);
         mLista = (ListView) findViewById(R.id.listaP);
         btnRegresar = (Button) findViewById(R.id.btnRegresarBusquedaP);
+        listaImprimible = new ArrayList<>();
+        listaObjetos = new ArrayList<>();
+        profesorElegido = new Profesor();
+        Bundle objetoEnviado = getIntent().getExtras();
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        if(extras!= null){
-            lista = extras.getStringArrayList("registrosEncontradosP");
-        }else {
 
-            Intent noDatos = new Intent(this ,Busqueda.class);
-            startActivity(noDatos);
+
+        if (objetoEnviado!=null){
+            listaObjetos = (ArrayList<Profesor>) objetoEnviado.getSerializable("objetosP");
         }
 
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,lista);
+        for(int i = 0; i<listaObjetos.size();i++){
+            listaImprimible.add(listaObjetos.get(i).toString());
+        }
+
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaImprimible);
         mLista.setAdapter(adapter);
 
         mLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String elementoEnLista = lista.get(i);
+                profesorElegido = listaObjetos.get(i);
                 Intent intent = new Intent(getApplicationContext(), PerfilProfesor.class);
-                intent.putExtra(EXTRA_MESSAGE, elementoEnLista);
+                Bundle bundleObjeto = new Bundle();
+                bundleObjeto.putSerializable("objetoElegido",profesorElegido);
+                intent.putExtras(bundleObjeto);
                 startActivity(intent);
 
             }
