@@ -135,7 +135,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(CREAR_TABLA_COMENTARIO);
         db.execSQL(CREAR_TABLA_CM);
         db.execSQL(CREAR_TABLA_MP);
-        db.execSQL("INSERT INTO "+TABLA_MATERIA+" ("+COLUMNA_MATERIA_NOMBRE+", "+COLUMNA_MATERIA_GRUPO+", "+COLUMNA_MATERIA_HORARIO+", "+COLUMNA_MATERIA_AULA+") VALUES ('calculo integral','1','MJ12-2','19-212')");
 
     }
 
@@ -171,6 +170,48 @@ public class BaseDatos extends SQLiteOpenHelper {
             mensaje = "Registrado correctamente";
         }catch (SQLException e){
             mensaje = "No registrado correctamente";
+        }
+        return mensaje;
+    }
+
+    public String datosPrecargados(){
+
+        String mensaje="";
+
+        SQLiteDatabase baseDatos = this.getWritableDatabase();
+
+        ContentValues valores = new ContentValues();
+
+        valores.put(COLUMNA_MATERIA_NOMBRE, "estructuras");
+        valores.put(COLUMNA_MATERIA_GRUPO,"1");
+        valores.put(COLUMNA_MATERIA_HORARIO, "MJ 8-10");
+        valores.put(COLUMNA_MATERIA_AULA, "19-311");
+
+        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
+        valores.put(COLUMNA_MATERIA_GRUPO,"22");
+        valores.put(COLUMNA_MATERIA_HORARIO, "LS 6-8");
+        valores.put(COLUMNA_MATERIA_AULA, "19-309");
+
+        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
+        valores.put(COLUMNA_MATERIA_GRUPO,"3");
+        valores.put(COLUMNA_MATERIA_HORARIO, "S 8-14");
+        valores.put(COLUMNA_MATERIA_AULA, "21-203");
+
+        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
+        valores.put(COLUMNA_MATERIA_GRUPO,"15");
+        valores.put(COLUMNA_MATERIA_HORARIO, "WV 16-18");
+        valores.put(COLUMNA_MATERIA_AULA, "10-110");
+
+        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
+        valores.put(COLUMNA_MATERIA_GRUPO,"47");
+        valores.put(COLUMNA_MATERIA_HORARIO, "LW 10-12");
+        valores.put(COLUMNA_MATERIA_AULA, "3-415");
+
+        try{
+            baseDatos.insertOrThrow(TABLA_MATERIA, null ,valores);
+            mensaje = "Materia guardada correctamente";
+        }catch (SQLException e){
+            mensaje = "Materia no ingresada correctamente";
         }
         return mensaje;
     }
@@ -307,7 +348,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     //Metodo para retornar la lista de materias que estan registradas en la base de datos
-    public List<Materia> obtenerTodasLasMaterias(){
+    public ArrayList<Materia> obtenerTodasLasMaterias(){
         //Arreglo de columnas a obtener
         String[]columnas={
                 COLUMNA_MATERIA_ID,
@@ -320,7 +361,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         String sortOrder = COLUMNA_MATERIA_NOMBRE +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
-        List<Materia> listaMaterias = new ArrayList<Materia>();
+        ArrayList<Materia> listaMaterias = new ArrayList<Materia>();
         SQLiteDatabase baseDatos = this.getReadableDatabase();
         Cursor cursor = baseDatos.query(
                 TABLA_MATERIA,  //Tabla que consultaremos
@@ -377,7 +418,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     //Metodo para retornar la lista de profesores que estan registrados en la base de datos
-    public List<Profesor> obtenerTodosLosProfesores(){
+    public ArrayList<Profesor> obtenerTodosLosProfesores(){
         //Arreglo de columnas a obtener
         String[]columnas= {
                 COLUMNA_PROFESOR_ID,
@@ -388,7 +429,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         String sortOrder = COLUMNA_PROFESOR_ID +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
-        List<Profesor> listaProfesores = new ArrayList<Profesor>();
+        ArrayList<Profesor> listaProfesores = new ArrayList<Profesor>();
         SQLiteDatabase baseDatos = this.getReadableDatabase();
         Cursor cursor = baseDatos.query(
                 TABLA_PROFESOR,  //Tabla que consultaremos
