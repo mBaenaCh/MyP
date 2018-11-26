@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vdanielmora.myp.Modelo.Materia;
 import com.example.vdanielmora.myp.Modelo.Profesor;
+import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 import com.example.vdanielmora.myp.R;
 
 import java.util.ArrayList;
@@ -18,9 +21,14 @@ public class PerfilProfesor extends AppCompatActivity {
 
     private TextView mNombre,mFacultad;
     private Button btnRegresar;
-
+    private BaseDatos baseDatos = new BaseDatos(this);
     private Profesor profesor;
-
+    private ArrayList<String>listaImprimible;
+    private ArrayList<Materia>listaMaterias;
+    private ArrayList<Materia>listaMateriasProfesor;
+    private ArrayList<Materia>listaAux;
+    private ArrayAdapter adapter;
+    private ListView mLista;
 
 
     @Override
@@ -30,14 +38,29 @@ public class PerfilProfesor extends AppCompatActivity {
         mNombre = (TextView) findViewById(R.id.txtPPNombre);
         mFacultad = (TextView) findViewById(R.id.txtPPFacultad);
         btnRegresar = (Button) findViewById(R.id.btnRegresarListaP);
+        mLista = (ListView) findViewById(R.id.listaMaterias);
+
+        listaImprimible = new ArrayList<>();
+        listaMaterias = new ArrayList<>();
+        listaMateriasProfesor = new ArrayList<>();
+
+
+        listaMaterias = baseDatos.obtenerTodasLasMaterias();
 
         Bundle objetoEnviado = getIntent().getExtras();
         profesor = null;
-
+        listaAux = null;
         if(objetoEnviado!=null){
             profesor = (Profesor) objetoEnviado.getSerializable("objetoElegido");
             mNombre.setText("Nombre: "+profesor.getNombre());
             mFacultad.setText("Facultad: "+profesor.getFacultad());
+
+            listaAux = profesor.getMaterias();
+
+
+            listaImprimible = deObjAString(listaAux);
+            adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, listaImprimible);
+            mLista.setAdapter(adapter);
 
             Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
         }else{
@@ -53,6 +76,26 @@ public class PerfilProfesor extends AppCompatActivity {
         });
 
 
+    }
+
+    /*
+    private ArrayList<Materia> seleccionDeMaterias(ArrayList<Materia> listaOriginal, ArrayList<Materia> listaComparacion){
+        ArrayList<Materia> listaRetorno = new ArrayList<>();
+
+        for (int i = 0; i < listaOriginal.size(); i++){
+            if(listaOriginal.get(i).getId() == listaComparacion.get(i).getId()){
+                listaRetorno.add(listaOriginal.get(i));
+            }
+        }
+        return listaRetorno;
+    }*/
+
+    private ArrayList<String> deObjAString(ArrayList<Materia> listaObj){
+        ArrayList<String> listaStrings = new ArrayList<>();
+        for (int i = 0; i < listaObj.size(); i++){
+            listaStrings.add(listaObj.get(i).toString());
+        }
+        return listaStrings;
     }
 
 

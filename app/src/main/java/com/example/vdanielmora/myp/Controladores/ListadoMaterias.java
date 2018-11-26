@@ -69,7 +69,7 @@ public class ListadoMaterias extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext() , Busqueda.class);
+                Intent intent = new Intent(getApplicationContext() ,MYPmain.class);
                 startActivity(intent);
             }
         });

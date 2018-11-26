@@ -86,7 +86,6 @@ public class Materia implements Serializable {
 
     @Override
     public String toString(){
-        return getNombre()+","+getGrupo()+","+getHorario()+","+getAula();
-
+        return getNombre()+" - "+getGrupo()+" - "+getHorario()+" - "+getAula();
     }
 }

@@ -118,7 +118,7 @@ public class Busqueda extends AppCompatActivity {
             //Retornamos el dato que este objeto tiene como "nombre"
             String nombre = lista.get(i).getNombre();
             //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
-            if(nombre.contains(dato.toLowerCase())){
+            if(nombre.contains(dato.toLowerCase().trim())){
             //Si es el caso entonces lo añadimos a la nueva lista de objetos encontrados de tipo "profesor"
                 listaDeEncontrados.add(lista.get(i));
 
