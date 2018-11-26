@@ -38,7 +38,6 @@ public class Busqueda extends AppCompatActivity {
         btnProfesor= (Button)findViewById(R.id.btnProfesor);
         materia = (EditText)findViewById(R.id.txtMateria);
         profesor = (EditText)findViewById(R.id.txtProfesor);
-
     }
 
     public void onClick(View v){
@@ -52,9 +51,8 @@ public class Busqueda extends AppCompatActivity {
 
             case R.id.btnMateria:
 
-                String mensaje = baseDatos.datosPrecargados();
 
-                Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+
 
                 //Cargo la lista de materias que existen en la base de datos
                 listaM = llenadoArrayListMateria(baseDatos.obtenerTodasLasMaterias());
@@ -120,7 +118,7 @@ public class Busqueda extends AppCompatActivity {
             //Retornamos el dato que este objeto tiene como "nombre"
             String nombre = lista.get(i).getNombre();
             //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
-            if(nombre.equals(dato.toLowerCase())){
+            if(nombre.contains(dato.toLowerCase())){
             //Si es el caso entonces lo añadimos a la nueva lista de objetos encontrados de tipo "profesor"
                 listaDeEncontrados.add(lista.get(i));
 
@@ -141,7 +139,7 @@ public class Busqueda extends AppCompatActivity {
             //Retornamos el dato que este objeto tiene como "nombre"
             String nombre = lista.get(i).getNombre();
             //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
-            if(nombre.equals(dato.toLowerCase())){
+            if(nombre.contains(dato.toLowerCase())){
                 //Si es el caso entonces l oañadimos a la nueva lista de objetos encontrados de tipo "materia"
                 listaDeEncontrados.add(lista.get(i));
             }
