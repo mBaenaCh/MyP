@@ -22,12 +22,16 @@ public class Busqueda extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.vdanielmora.myp.controladores.MESSAGE";
     private Button btnMateria;
     private Button btnProfesor;
+    private Button btnListaM;
+    private Button btnListaP;
     private EditText materia;
     private EditText profesor;
     private ArrayList listaM;
     private ArrayList listaP;
     private ArrayList<Materia> listaEncontradosM;
     private ArrayList<Profesor> listaEncontradosP;
+    private ArrayList listaCompletaMaterias;
+    private ArrayList listaCompletaProfesores;
     private BaseDatos baseDatos = new BaseDatos(this);
 
     @Override
@@ -38,6 +42,8 @@ public class Busqueda extends AppCompatActivity {
         btnProfesor= (Button)findViewById(R.id.btnProfesor);
         materia = (EditText)findViewById(R.id.txtMateria);
         profesor = (EditText)findViewById(R.id.txtProfesor);
+        btnListaM = (Button)findViewById(R.id.btnListaM);
+        btnListaP= (Button)findViewById(R.id.btnListaP);
     }
 
     public void onClick(View v){
@@ -85,6 +91,28 @@ public class Busqueda extends AppCompatActivity {
                 startActivity(intentProfesor);
 
                 break;
+
+            case R.id.btnListaM:
+                listaCompletaMaterias=llenadoArrayListMateria(baseDatos.obtenerTodasLasMaterias());
+                Intent intentListaMateriaCompleta = new Intent(getApplicationContext(), ListadoMaterias.class);
+                Bundle bundleMateriaCompleta = new Bundle();
+                bundleMateriaCompleta.putSerializable("objetosM", listaCompletaMaterias);
+                intentListaMateriaCompleta.putExtras(bundleMateriaCompleta);
+                startActivity(intentListaMateriaCompleta);
+
+                break;
+
+            case R.id.btnListaP:
+                listaCompletaProfesores= llenadoArrayListProfesor(baseDatos.obtenerTodosLosProfesores());
+
+                Intent intentListaProfesorCompleta = new Intent(getApplicationContext(),ListaProfesor.class);
+                Bundle bundleProfesorCompleta = new Bundle();
+                bundleProfesorCompleta.putSerializable("objetosP",listaCompletaProfesores);
+                intentListaProfesorCompleta.putExtras(bundleProfesorCompleta);
+                startActivity(intentListaProfesorCompleta);
+                break;
+
+
         }
 
     }
@@ -118,7 +146,7 @@ public class Busqueda extends AppCompatActivity {
             //Retornamos el dato que este objeto tiene como "nombre"
             String nombre = lista.get(i).getNombre();
             //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
-            if(nombre.contains(dato.toLowerCase().trim())){
+            if(nombre.contains(dato.toLowerCase().trim().toLowerCase())){
             //Si es el caso entonces lo añadimos a la nueva lista de objetos encontrados de tipo "profesor"
                 listaDeEncontrados.add(lista.get(i));
 
@@ -137,7 +165,7 @@ public class Busqueda extends AppCompatActivity {
         for(int i = 0; i<lista.size();i++){
             //Del elemento en la posicion "i", que es un objeto materia
             //Retornamos el dato que este objeto tiene como "nombre"
-            String nombre = lista.get(i).getNombre();
+            String nombre = lista.get(i).getNombre().trim().toLowerCase();
             //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
             if(nombre.contains(dato.toLowerCase())){
                 //Si es el caso entonces l oañadimos a la nueva lista de objetos encontrados de tipo "materia"

@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/txtPPNombre"
-        android:layout_width="194dp"
-        android:layout_height="29dp"
+        android:layout_width="355dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
@@ -18,12 +18,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-66dp" />
 
     <TextView
         android:id="@+id/txtPPFacultad"
-        android:layout_width="194dp"
-        android:layout_height="29dp"
+        android:layout_width="358dp"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
@@ -32,7 +33,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre"
+        tools:layout_editor_absoluteX="-69dp" />
 
     <TextView
         android:id="@+id/lblMateriasHorarios"
@@ -52,13 +54,13 @@
 
     <ListView
         android:id="@+id/listaMaterias"
-        android:layout_width="368dp"
+        android:layout_width="375dp"
         android:layout_height="159dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblMateriasHorarios" />
 
