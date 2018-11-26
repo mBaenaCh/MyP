@@ -18,9 +18,9 @@ public class PerfilProfesor extends AppCompatActivity {
 
     private TextView mNombre,mFacultad;
     private Button btnRegresar;
-    private ListView mLista;
+
     private Profesor profesor;
-    private ArrayList<String> listaNombres;
+
 
 
     @Override
@@ -30,21 +30,24 @@ public class PerfilProfesor extends AppCompatActivity {
         mNombre = (TextView) findViewById(R.id.txtPPNombre);
         mFacultad = (TextView) findViewById(R.id.txtPPFacultad);
         btnRegresar = (Button) findViewById(R.id.btnRegresarListaP);
+
         Bundle objetoEnviado = getIntent().getExtras();
         profesor = null;
 
         if(objetoEnviado!=null){
-            profesor = (Profesor) objetoEnviado.getSerializable("profesorElegido");
-            //String mensaje = profesor.toString();
+            profesor = (Profesor) objetoEnviado.getSerializable("objetoElegido");
             mNombre.setText("Nombre: "+profesor.getNombre());
             mFacultad.setText("Facultad: "+profesor.getFacultad());
-            //Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "EL OBJETO LLEGO VACIO", Toast.LENGTH_LONG).show();
         }
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ListaProfesor.class);
+                Intent intent = new Intent(getApplicationContext(), MYPmain.class);
                 startActivity(intent);
             }
         });

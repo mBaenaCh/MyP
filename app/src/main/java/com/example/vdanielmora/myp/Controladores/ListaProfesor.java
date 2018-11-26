@@ -29,7 +29,7 @@ public class ListaProfesor extends AppCompatActivity {
         mLista = (ListView) findViewById(R.id.listaP);
         btnRegresar = (Button) findViewById(R.id.btnRegresarBusquedaP);
         listaImprimible = new ArrayList<>();
-        listaObjetos = new ArrayList<>();
+        listaObjetos = null;
         profesorElegido = new Profesor();
         Bundle objetoEnviado = getIntent().getExtras();
 

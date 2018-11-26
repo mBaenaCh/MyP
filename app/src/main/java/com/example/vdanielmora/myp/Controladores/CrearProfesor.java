@@ -50,7 +50,7 @@ public class CrearProfesor extends AppCompatActivity {
             listaNombres.add(listaObjetos.get(i).getGrupo()+" - "+listaObjetos.get(i).getNombre());
         }
 
-        ArrayAdapter<CharSequence> adaptador = new ArrayAdapter(this,android.R.layout.simple_spinner_item,listaNombres);
+        ArrayAdapter<CharSequence> adaptador = new ArrayAdapter(this,android.R.layout.simple_spinner_item, listaNombres);
         comboMaterias.setAdapter(adaptador);
 
         comboMaterias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -60,6 +60,7 @@ public class CrearProfesor extends AppCompatActivity {
                 if(position!=0) {
                     btnCrear.setEnabled(true);
                     idSeleccionado = listaObjetos.get(position - 1).getId();
+                    baseDatos.añadirMateriaProfesor(Integer.toString(profesor.getId()), Integer.toString(idSeleccionado));
                 }else{
 
                     Toast.makeText(CrearProfesor.this, "SELECCIONE ALGUNA MATERIA", Toast.LENGTH_LONG).show();
@@ -77,7 +78,7 @@ public class CrearProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 llenarBD();
-                baseDatos.añadirMateriaProfesor(Integer.toString(profesor.getId()), Integer.toString(idSeleccionado));
+
             }
         });
 
@@ -90,7 +91,6 @@ public class CrearProfesor extends AppCompatActivity {
         if(!validacionEntradas.validacionCamposVacios(mNombre, "Ingrese el nombre del profesor")){
             return;
         }
-
         if(!validacionEntradas.validacionCamposVacios(mFacultad, "Ingrese la facultad a la cual pertenece el profesor")){
             return;
         }else{
