@@ -6,12 +6,14 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import com.example.vdanielmora.myp.Modelo.Comentario;
 import com.example.vdanielmora.myp.Modelo.Materia;
 import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.Modelo.Usuario;
 
+import java.sql.SQLData;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +70,7 @@ public class BaseDatos extends SQLiteOpenHelper {
      *
      *
      */
+    private static final String COLUMNA_MP_ID = "mp_id";
     private static final String COLUMNA_MP_ID_MATERIA = "mp_materia_id";
     private static final String COLUMNA_MP_ID_PROFESOR = "mp_profesor_id";
 
@@ -75,6 +78,7 @@ public class BaseDatos extends SQLiteOpenHelper {
      *
      *
      */
+    private static final String COLUMNA_CM_ID = "cm_id";
     private static final String COLUMNA_CM_ID_COMENTARIO = "cm_comentario_id";
     private static final String COLUMNA_CM_ID_MATERIA = "cm_materia_id";
 
@@ -96,8 +100,8 @@ public class BaseDatos extends SQLiteOpenHelper {
             COLUMNA_MATERIA_AULA+" TEXT"+")";
 
     //Query para la creacion de la tabla profesor
-    private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+ " ("+
-            COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+    private String CREAR_TABLA_PROFESOR = "CREATE TABLE "+TABLA_PROFESOR+" ("+
+            COLUMNA_PROFESOR_ID+" INTEGER PRIMARY KEY,"+
             COLUMNA_PROFESOR_NOMBRE+" TEXT,"+
             COLUMNA_PROFESOR_FACULTAD+" TEXT"+")";
 
@@ -110,11 +114,13 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Query para la creacion de la tabla materia profesor
     private String CREAR_TABLA_MP = "CREATE TABLE "+TABLA_MATERIA_PROFESOR+ " ("+
+            COLUMNA_MP_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_MP_ID_MATERIA+" INTEGER REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+"),"+
             COLUMNA_MP_ID_PROFESOR+" INTEGER REFERENCES "+TABLA_PROFESOR+"("+COLUMNA_PROFESOR_ID+")"+")";
 
 
     private String CREAR_TABLA_CM = "CREATE TABLE "+TABLA_COMENTARIO_MATERIA+ " ("+
+            COLUMNA_CM_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_CM_ID_COMENTARIO+ " INTEGER REFERENCES " +TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+"), "+
             COLUMNA_CM_ID_MATERIA+" INTEGER REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+")";
 
@@ -174,47 +180,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         return mensaje;
     }
 
-    public String datosPrecargados(){
 
-        String mensaje="";
-
-        SQLiteDatabase baseDatos = this.getWritableDatabase();
-
-        ContentValues valores = new ContentValues();
-
-        valores.put(COLUMNA_MATERIA_NOMBRE, "estructuras");
-        valores.put(COLUMNA_MATERIA_GRUPO,"1");
-        valores.put(COLUMNA_MATERIA_HORARIO, "MJ 8-10");
-        valores.put(COLUMNA_MATERIA_AULA, "19-311");
-
-        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
-        valores.put(COLUMNA_MATERIA_GRUPO,"22");
-        valores.put(COLUMNA_MATERIA_HORARIO, "LS 6-8");
-        valores.put(COLUMNA_MATERIA_AULA, "19-309");
-
-        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
-        valores.put(COLUMNA_MATERIA_GRUPO,"3");
-        valores.put(COLUMNA_MATERIA_HORARIO, "S 8-14");
-        valores.put(COLUMNA_MATERIA_AULA, "21-203");
-
-        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
-        valores.put(COLUMNA_MATERIA_GRUPO,"15");
-        valores.put(COLUMNA_MATERIA_HORARIO, "WV 16-18");
-        valores.put(COLUMNA_MATERIA_AULA, "10-110");
-
-        valores.put(COLUMNA_MATERIA_NOMBRE, "ingles 2");
-        valores.put(COLUMNA_MATERIA_GRUPO,"47");
-        valores.put(COLUMNA_MATERIA_HORARIO, "LW 10-12");
-        valores.put(COLUMNA_MATERIA_AULA, "3-415");
-
-        try{
-            baseDatos.insertOrThrow(TABLA_MATERIA, null ,valores);
-            mensaje = "Materia guardada correctamente";
-        }catch (SQLException e){
-            mensaje = "Materia no ingresada correctamente";
-        }
-        return mensaje;
-    }
 
     //Metodo para obtener de forma ascendente, segun el nombre, todos los usuarios en la base de datos
     public List<Usuario> obtenerTodosLosUsuarios(){
@@ -420,16 +386,17 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Metodo para retornar la lista de profesores que estan registrados en la base de datos
     public ArrayList<Profesor> obtenerTodosLosProfesores(){
         //Arreglo de columnas a obtener
-        String[]columnas= {
+        String[]columnas={
                 COLUMNA_PROFESOR_ID,
                 COLUMNA_PROFESOR_NOMBRE,
                 COLUMNA_PROFESOR_FACULTAD
         };
 
+        //Forma como seran ordenados los usuarios
         String sortOrder = COLUMNA_PROFESOR_ID +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
-        ArrayList<Profesor> listaProfesores = new ArrayList<Profesor>();
+        ArrayList<Profesor> listaProfesores = new ArrayList<>();
         SQLiteDatabase baseDatos = this.getReadableDatabase();
         Cursor cursor = baseDatos.query(
                 TABLA_PROFESOR,  //Tabla que consultaremos
@@ -442,16 +409,14 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         //Recorriendo todas las filas de la tabla mientras halla registros
         if (cursor.moveToFirst()){
-            do{
-                //Creando un objeto de los datos que estan en cada fila
+            do {
+                //Creando un objeto de los datos que esta nen cada fila
                 Profesor profesor = new Profesor();
-
                 profesor.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_ID))));
                 profesor.setNombre(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_NOMBRE)));
                 profesor.setFacultad(cursor.getString(cursor.getColumnIndex(COLUMNA_PROFESOR_FACULTAD)));
 
-
-                //Añadiendo el objeto a la lista de materias
+                //Añadiendo el objeto a la lista de usuarios
                 listaProfesores.add(profesor);
             }while(cursor.moveToNext());
         }
@@ -523,5 +488,25 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         return listaComentarios;
     }
+
+    public String añadirMateriaProfesor(String idProfesor, String idMateria){
+        String mensaje="";
+
+        SQLiteDatabase baseDatos = this.getWritableDatabase();
+        ContentValues contenedor = new ContentValues();
+
+        contenedor.put(COLUMNA_MP_ID_PROFESOR,idProfesor);
+        contenedor.put(COLUMNA_MP_ID_MATERIA,idMateria);
+
+        try{
+            baseDatos.insertOrThrow(TABLA_MATERIA_PROFESOR, null , contenedor);
+            mensaje = "Materia asignada correctamente";
+        }catch (SQLException e){
+            mensaje = "Materia asignada incorrectamente";
+        }
+
+        return mensaje;
+    }
+
 
 }

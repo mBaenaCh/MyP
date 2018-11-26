@@ -7,17 +7,15 @@ public class Profesor implements Serializable {
 
     private int id;
     private String nombre;
-    private String apellido;
     private ArrayList <Materia> materias;
     private String facultad;
 
     public Profesor() {
     }
 
-    public Profesor(int id, String nombre, String apellido, String facultad) {
+    public Profesor(int id, String nombre, String facultad) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
         this.facultad = facultad;
         materias = new ArrayList<>();
     }
@@ -38,13 +36,6 @@ public class Profesor implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellido(){
-        return apellido;
-    }
-
-    public void setApellido(String apellido){
-        this.apellido = apellido;
-    }
 
     public String getFacultad() {
         return facultad;
@@ -62,9 +53,11 @@ public class Profesor implements Serializable {
         this.materias = materias;
     }
 
+
+
     @Override
     public String toString() {
-        return getNombre()+","+getApellido()+","+getFacultad();
+        return getNombre()+","+getFacultad();
     }
 
 

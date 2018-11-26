@@ -26,8 +26,8 @@ public class Materia implements Serializable {
         this.context = context;
     }
 
-    public Materia(int id, String nombre, String grupo, String horario, String aula) {
-        this.id = id;
+    public Materia(String nombre, String grupo, String horario, String aula) {
+
         this.nombre = nombre;
         this.grupo = grupo;
         this.horario = horario;

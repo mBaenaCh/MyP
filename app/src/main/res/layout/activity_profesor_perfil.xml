@@ -25,14 +25,14 @@
         android:layout_width="194dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="monospace"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPPApellido" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre" />
 
     <TextView
         android:id="@+id/lblMateriasHorarios"
@@ -73,14 +73,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listaMaterias" />
-
-    <TextView
-        android:id="@+id/txtPPApellido"
-        android:layout_width="194dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre" />
 
 </android.support.constraint.ConstraintLayout>
