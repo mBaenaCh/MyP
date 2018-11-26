@@ -57,7 +57,7 @@ public class Profesor implements Serializable {
 
     @Override
     public String toString() {
-        return getNombre()+","+getFacultad();
+        return getNombre()+" - "+getFacultad();
     }
 
 

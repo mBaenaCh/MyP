@@ -2,6 +2,7 @@ package com.example.vdanielmora.myp.Modelo;
 
 public class MateriaProfesor {
 
+    private int id;
     private int idProfesor;
     private int idMateria;
 
@@ -11,6 +12,14 @@ public class MateriaProfesor {
     public MateriaProfesor(int idProfesor, int idMateria) {
         this.idProfesor = idProfesor;
         this.idMateria = idMateria;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getIdProfesor() {
@@ -27,5 +36,10 @@ public class MateriaProfesor {
 
     public void setIdMateria(int idMateria) {
         this.idMateria = idMateria;
+    }
+
+    @Override
+    public String toString() {
+        return idProfesor + " - " + idMateria;
     }
 }
