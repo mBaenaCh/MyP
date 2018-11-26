@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class CrearProfesor extends AppCompatActivity {
 
     private EditText mId, mNombre, mFacultad;
-    private Button btnCrear, btnAñadirMateriaP;
+    private Button btnCrear;
     private ValidacionEntradas validacionEntradas;
     private BaseDatos baseDatos = new BaseDatos(this);
     private Profesor profesor;
@@ -41,7 +41,6 @@ public class CrearProfesor extends AppCompatActivity {
         mFacultad = (EditText) findViewById(R.id.txtFacultadP);
         btnCrear = (Button) findViewById(R.id.btnCrearP);
         comboMaterias = (Spinner) findViewById(R.id.comboMaterias);
-        btnAñadirMateriaP = (Button) findViewById(R.id.btnAñadirMateriaP);
 
         listaNombres = new ArrayList<>();
 
@@ -100,11 +99,11 @@ public class CrearProfesor extends AppCompatActivity {
         if(!validacionEntradas.validacionCamposVacios(mNombre, "Ingrese el nombre del profesor")){
             return;
         }
-        if(!validacionEntradas.validacionCamposVacios(mFacultad, "Ingrese la facultad a la cual pertenece el profesor")){
+        if(!validacionEntradas.validacionCamposVacios(mFacultad, "Ingrese la facultad a la cual pertenece el profesor")) {
             return;
         }else{
             profesor.setId(Integer.parseInt(mId.getText().toString().trim()));
-            profesor.setNombre(mNombre.getText().toString().trim());
+            profesor.setNombre(mNombre.getText().toString().trim().toLowerCase());
             profesor.setFacultad(mFacultad.getText().toString().trim());
             baseDatos.añadirProfesor(profesor);
         }

@@ -1,6 +1,7 @@
 package com.example.vdanielmora.myp.Controladores;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,13 +55,15 @@ public class PerfilProfesor extends AppCompatActivity {
             profesor = (Profesor) objetoEnviado.getSerializable("objetoElegido");
             mNombre.setText("Nombre: "+profesor.getNombre());
             mFacultad.setText("Facultad: "+profesor.getFacultad());
+            //listaMateriasProfesor = profesor.getMaterias();
+            //listaAux = seleccionDeMaterias(listaMaterias,listaMateriasProfesor);
 
-            listaAux = profesor.getMaterias();
+            listaImprimible = deObjAString(listaMaterias);
 
-
-            listaImprimible = deObjAString(listaAux);
             adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, listaImprimible);
             mLista.setAdapter(adapter);
+
+            mLista.setBackgroundColor(Color.GRAY);
 
             Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
         }else{
@@ -78,17 +81,17 @@ public class PerfilProfesor extends AppCompatActivity {
 
     }
 
-    /*
+
     private ArrayList<Materia> seleccionDeMaterias(ArrayList<Materia> listaOriginal, ArrayList<Materia> listaComparacion){
         ArrayList<Materia> listaRetorno = new ArrayList<>();
 
-        for (int i = 0; i < listaOriginal.size(); i++){
+        for (int i = 0; i < listaComparacion.size(); i++){
             if(listaOriginal.get(i).getId() == listaComparacion.get(i).getId()){
                 listaRetorno.add(listaOriginal.get(i));
             }
         }
         return listaRetorno;
-    }*/
+    }
 
     private ArrayList<String> deObjAString(ArrayList<Materia> listaObj){
         ArrayList<String> listaStrings = new ArrayList<>();

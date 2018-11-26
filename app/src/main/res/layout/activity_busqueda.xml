@@ -30,13 +30,14 @@
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="41dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="monospace"
         android:text="Busqueda Materia: "
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/editText4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProfesor" />
 
@@ -44,17 +45,19 @@
         android:id="@+id/txtProfesor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="344dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="344dp"
         android:ems="10"
         android:hint="Nombre Profesor"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtMateria"
@@ -78,44 +81,80 @@
         android:id="@+id/btnProfesor"
         android:layout_width="215dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="266dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="324dp"
         android:layout_marginStart="89dp"
         android:layout_marginTop="25dp"
         android:onClick="onClick"
         android:text="Buscar Profesor"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIdP"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="89dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnMateria"
         android:layout_width="215dp"
         android:layout_height="43dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="60dp"
         android:onClick="onClick"
         android:text="Buscar Materia"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.538"
+        tools:layout_editor_absoluteX="89dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="89dp" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="wrap_content"
-        android:layout_height="5dp"
+        android:layout_height="6dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="34dp"
         android:background="#08605F"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProfesor" />
+        app:layout_constraintTop_toBottomOf="@+id/btnProfesor"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <Button
+        android:id="@+id/btnListaP"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Lista Profesores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProfesor"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="89dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="89dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnListaM"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Lista Materias"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMateria"
+        tools:layout_editor_absoluteX="89dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="89dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

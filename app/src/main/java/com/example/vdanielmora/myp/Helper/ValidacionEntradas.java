@@ -43,4 +43,15 @@ public class ValidacionEntradas {
         return true;
     }
 
+    public boolean validacionCamposNumericos(EditText editText, String mensaje){
+
+        int dato = Integer.parseInt(editText.getText().toString().trim());
+
+        if(dato!=(int)dato) {
+            return false;
+        }
+        return true;
+
+    }
+
 }

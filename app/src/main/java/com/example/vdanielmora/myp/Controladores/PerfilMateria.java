@@ -56,7 +56,7 @@ public class PerfilMateria extends AppCompatActivity {
         if(objetoRecibido!=null) {
             materia = (Materia) objetoRecibido.getSerializable("objetoElegido");
             String mensaje = materia.toString();
-            mNombre.setText("Nombre: "+materia.getNombre());
+            mNombre.setText(materia.getNombre());
             mGrupo.setText("Grupo: "+materia.getGrupo());
             mHorario.setText("Horario: "+materia.getHorario());
             mAula.setText("Aula: "+materia.getAula());
