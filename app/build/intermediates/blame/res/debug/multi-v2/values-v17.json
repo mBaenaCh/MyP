@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/estudiantes/mateo.baena/Myp/MyP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "C:\\Users\\Victor\\Desktop\\Manster\\MyP\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "/home/estudiantes/mateo.baena/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a08c32a987fd889b703efb532286f04a/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\c1c6f9da700e3e9d51707e3402da6e53\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

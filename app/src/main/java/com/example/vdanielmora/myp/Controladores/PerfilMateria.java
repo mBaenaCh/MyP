@@ -70,6 +70,7 @@ public class PerfilMateria extends AppCompatActivity {
                 crearComentario(mTexto.getText().toString().trim(),myPmain.getNombreUsuario());
                 lista.add(comentario.getTexto());
                 mLista.setAdapter(adapter);
+
             }
         });
 
@@ -79,7 +80,7 @@ public class PerfilMateria extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), ListadoMaterias.class);
                 startActivity(intent);
-
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 

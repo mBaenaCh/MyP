@@ -72,6 +72,8 @@ public class Busqueda extends AppCompatActivity {
                 bundleM.putSerializable("objetosM", listaEncontradosM);
                 intentMateria.putExtras(bundleM);
                 startActivity(intentMateria);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
 
                 break;
 
@@ -89,6 +91,7 @@ public class Busqueda extends AppCompatActivity {
                 bundleP.putSerializable("objetosP",listaEncontradosP);
                 intentProfesor.putExtras(bundleP);
                 startActivity(intentProfesor);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
 
                 break;
 
@@ -99,6 +102,7 @@ public class Busqueda extends AppCompatActivity {
                 bundleMateriaCompleta.putSerializable("objetosM", listaCompletaMaterias);
                 intentListaMateriaCompleta.putExtras(bundleMateriaCompleta);
                 startActivity(intentListaMateriaCompleta);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
 
                 break;
 
@@ -110,6 +114,7 @@ public class Busqueda extends AppCompatActivity {
                 bundleProfesorCompleta.putSerializable("objetosP",listaCompletaProfesores);
                 intentListaProfesorCompleta.putExtras(bundleProfesorCompleta);
                 startActivity(intentListaProfesorCompleta);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 break;
 
 

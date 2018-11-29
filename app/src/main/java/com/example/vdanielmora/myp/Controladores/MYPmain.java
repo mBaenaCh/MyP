@@ -92,6 +92,8 @@ public class MYPmain extends AppCompatActivity {
                 mContra.getText().toString().trim())){
             Intent goBusqueda = new Intent(this,Busqueda.class);
             startActivity(goBusqueda);
+
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
         }else{
             Toast.makeText(this, "Cuenta no registrada", Toast.LENGTH_SHORT).show();
         }
