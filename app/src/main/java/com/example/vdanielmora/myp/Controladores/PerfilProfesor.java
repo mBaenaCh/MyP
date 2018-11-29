@@ -63,7 +63,7 @@ public class PerfilProfesor extends AppCompatActivity {
             adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, listaImprimible);
             mLista.setAdapter(adapter);
 
-            mLista.setBackgroundColor(Color.GRAY);
+            //mLista.setBackgroundColor(Color.GRAY);
 
             Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
         }else{
@@ -73,8 +73,9 @@ public class PerfilProfesor extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MYPmain.class);
+                Intent intent = new Intent(getApplicationContext(), ListaProfesor.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
