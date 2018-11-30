@@ -1,5 +1,6 @@
 package com.example.vdanielmora.myp.Controladores;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.example.vdanielmora.myp.R;
 
 public class CrearMaterias extends AppCompatActivity {
 
-    private EditText mNombre, mGrupo, mHorario, mAula;
+    private EditText mNombre, mGrupo, mHorario, mAula, mId;
     private Button btnCrear;
     private ValidacionEntradas validacionEntradas;
     private BaseDatos baseDatos = new BaseDatos(this);
@@ -28,6 +29,7 @@ public class CrearMaterias extends AppCompatActivity {
         mGrupo = (EditText) findViewById(R.id.txtMGrupo);
         mHorario = (EditText) findViewById(R.id.txtMHorario);
         mAula = (EditText) findViewById(R.id.txtMAula);
+        mId = (EditText) findViewById(R.id.txtIdM);
         btnCrear = (Button) findViewById(R.id.btnCrearMateria);
 
         validacionEntradas = new ValidacionEntradas(this);
@@ -37,6 +39,8 @@ public class CrearMaterias extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 llenarBD();
+                Intent intent = new Intent(getApplicationContext(),MYPmain.class);
+                startActivity(intent);
             }
         });
 
@@ -44,6 +48,9 @@ public class CrearMaterias extends AppCompatActivity {
 
     private void llenarBD(){
 
+        if(!validacionEntradas.validacionCamposVacios(mId,"Ingrese el id de la materia")){
+            return;
+        }
         if(!validacionEntradas.validacionCamposVacios(mNombre, "Ingrese el nombre de la materia")){
             return;
         }
@@ -56,6 +63,8 @@ public class CrearMaterias extends AppCompatActivity {
         if(!validacionEntradas.validacionCamposVacios(mAula, "Ingrese el aula de la materia")){
             return;
         }else{
+
+            materia.setId(Integer.parseInt(mId.getText().toString().trim()));
             materia.setNombre(mNombre.getText().toString().trim());
             materia.setGrupo(mGrupo.getText().toString().trim());
             materia.setHorario(mHorario.getText().toString().trim());
@@ -66,12 +75,4 @@ public class CrearMaterias extends AppCompatActivity {
 
         }
     }
-
-    private void limpiarCamposDeTexto(){
-        mNombre.setText(null);
-        mGrupo.setText(null);
-        mHorario.setText(null);
-        mAula.setText(null);
-    }
-
 }

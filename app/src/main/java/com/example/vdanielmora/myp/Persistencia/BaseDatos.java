@@ -14,6 +14,7 @@ import com.example.vdanielmora.myp.Modelo.Materia;
 import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.Modelo.Usuario;
 
+import java.sql.Array;
 import java.sql.SQLData;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +95,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Query para la creacion de la tabla materia
     private String CREAR_TABLA_MATERIA = "CREATE TABLE "+TABLA_MATERIA+ " ("+
-            COLUMNA_MATERIA_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+            COLUMNA_MATERIA_ID+" INTEGER PRIMARY KEY,"+
             COLUMNA_MATERIA_NOMBRE+" TEXT,"+
             COLUMNA_MATERIA_GRUPO+" TEXT,"+
             COLUMNA_MATERIA_HORARIO+" TEXT,"+
@@ -108,7 +109,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Query para la creacion de la tabla comentario
     private String CREAR_TABLA_COMENTARIO = "CREATE TABLE "+TABLA_COMENTARIO+ " ("+
-            COLUMNA_COMENTARIO_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+            COLUMNA_COMENTARIO_ID+" INTEGER PRIMARY KEY,"+
             COLUMNA_COMENTARIO_TEXTO+" TEXT,"+
             COLUMNA_COMENTARIO_NUSUARIO+" TEXT"+")";
 
@@ -116,12 +117,12 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Query para la creacion de la tabla materia profesor
     private String CREAR_TABLA_MP = "CREATE TABLE "+TABLA_MATERIA_PROFESOR+ " ("+
             COLUMNA_MP_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
-            COLUMNA_MP_ID_MATERIA+" INTEGER ," +
-            COLUMNA_MP_ID_PROFESOR+" INTEGER ," +
+            COLUMNA_MP_ID_MATERIA+" INTEGER," +
+            COLUMNA_MP_ID_PROFESOR+" INTEGER," +
             "FOREIGN KEY ("+COLUMNA_MP_ID_MATERIA+") REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+"),"+
             "FOREIGN KEY ("+COLUMNA_MP_ID_PROFESOR+") REFERENCES "+TABLA_PROFESOR+"("+COLUMNA_PROFESOR_ID+")"+")";
 
-
+    //Query para la creacion de la tabla comentario materia
     private String CREAR_TABLA_CM = "CREATE TABLE "+TABLA_COMENTARIO_MATERIA+ " ("+
             COLUMNA_CM_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
             COLUMNA_CM_ID_COMENTARIO+ " INTEGER REFERENCES " +TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+"), "+
@@ -297,17 +298,17 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Metodo para añadir un objeto materia a la base de datos
     public String añadirMateria(Materia materia){
         String mensaje="";
-
-        SQLiteDatabase baseDatos = this.getWritableDatabase();
         ContentValues contenedor = new ContentValues();
+        SQLiteDatabase baseDatos = this.getWritableDatabase();
 
-        contenedor.put(COLUMNA_MATERIA_NOMBRE, materia.getNombre());
-        contenedor.put(COLUMNA_MATERIA_GRUPO,materia.getGrupo());
-        contenedor.put(COLUMNA_MATERIA_HORARIO, materia.getHorario());
-        contenedor.put(COLUMNA_MATERIA_AULA, materia.getAula());
+        contenedor.put(COLUMNA_MATERIA_ID,materia.getId());
+        contenedor.put(COLUMNA_MATERIA_NOMBRE,materia.getNombre());
+        contenedor.put(COLUMNA_MATERIA_GRUPO, materia.getGrupo());
+        contenedor.put(COLUMNA_MATERIA_HORARIO,materia.getHorario());
+        contenedor.put(COLUMNA_MATERIA_AULA,materia.getAula());
 
         try{
-            baseDatos.insertOrThrow(TABLA_MATERIA, null , contenedor);
+            baseDatos.insertOrThrow(TABLA_MATERIA,null, contenedor);
             mensaje = "Materia guardada correctamente";
         }catch (SQLException e){
             mensaje = "Materia no ingresada correctamente";
@@ -327,7 +328,7 @@ public class BaseDatos extends SQLiteOpenHelper {
                 COLUMNA_MATERIA_AULA
         };
 
-        String sortOrder = COLUMNA_MATERIA_NOMBRE +" ASC";
+        String sortOrder = COLUMNA_MATERIA_ID +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
         ArrayList<Materia> listaMaterias = new ArrayList<Materia>();
@@ -368,17 +369,15 @@ public class BaseDatos extends SQLiteOpenHelper {
     public String añadirProfesor(Profesor profesor){
 
         String mensaje="";
-
         SQLiteDatabase baseDatos = this.getWritableDatabase();
+        ContentValues contenedor = new ContentValues();
 
-        ContentValues valores = new ContentValues();
-
-        valores.put(COLUMNA_PROFESOR_ID,profesor.getId());
-        valores.put(COLUMNA_PROFESOR_NOMBRE,profesor.getNombre());
-        valores.put(COLUMNA_PROFESOR_FACULTAD,profesor.getFacultad());
+        contenedor.put(COLUMNA_PROFESOR_ID, profesor.getId());
+        contenedor.put(COLUMNA_PROFESOR_NOMBRE, profesor.getNombre());
+        contenedor.put(COLUMNA_PROFESOR_FACULTAD,profesor.getFacultad());
 
         try {
-            baseDatos.insertOrThrow(TABLA_PROFESOR, null, valores);
+            baseDatos.insertOrThrow(TABLA_PROFESOR,null,contenedor);
             mensaje = "Registrado correctamente";
         }catch (SQLException e){
             mensaje = "No registrado correctamente";
@@ -431,13 +430,13 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Metodo para añadir un objeto comentario a la base de datos
     public String añadirComentario(Comentario comentario){
-
         String mensaje="";
 
         SQLiteDatabase baseDatos = this.getWritableDatabase();
 
         ContentValues valores = new ContentValues();
 
+        valores.put(COLUMNA_COMENTARIO_ID,comentario.getId());
         valores.put(COLUMNA_COMENTARIO_TEXTO,comentario.getTexto());
         valores.put(COLUMNA_COMENTARIO_NUSUARIO,comentario.getNombreUsuario());
 
@@ -451,7 +450,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     //Metodo para obtener de forma ascendente, segun el id, todos los comentarios en la base de datos
-    public List<Comentario> obtenerTodosLosComentarios(){
+    public ArrayList<Comentario> obtenerTodosLosComentarios(){
         //Arreglo de columnas a obtener
         String[]columnas={
                 COLUMNA_COMENTARIO_ID,
@@ -463,7 +462,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         String sortOrder = COLUMNA_COMENTARIO_ID +" ASC";
 
         //Instanciacion de la colection "ArrayList" por medio de referencia a clase general "List"
-        List<Comentario> listaComentarios = new ArrayList<>();
+        ArrayList<Comentario> listaComentarios = new ArrayList<>();
         SQLiteDatabase baseDatos = this.getReadableDatabase();
         Cursor cursor = baseDatos.query(
                 TABLA_COMENTARIO,  //Tabla que consultaremos
@@ -493,47 +492,57 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     public String añadirMateriaProfesor(int idMateria, int idProfesor){
+
         String mensaje="";
 
-        SQLiteDatabase baseDatos = this.getWritableDatabase();
-        ContentValues contenedor = new ContentValues();
+            try{
+                SQLiteDatabase baseDatos = this.getWritableDatabase();
 
-        contenedor.put(COLUMNA_MP_ID_MATERIA, idMateria);
-        contenedor.put(COLUMNA_MP_ID_PROFESOR,idProfesor);
+                baseDatos.execSQL("INSERT INTO "+TABLA_MATERIA_PROFESOR+" ("+COLUMNA_MP_ID_MATERIA+", "+COLUMNA_MP_ID_PROFESOR+") VALUES ("+idMateria+", "+idProfesor+")");
 
+                mensaje = "Materia asignada correctamente";
+            }catch (SQLException e){
+                mensaje = "Materia asignada incorrectamente";
+            }
+
+            return mensaje;
+    }
+
+    public String añadirComentarioMateria(int idComentario, int idMateria){
+        String mensaje = "";
 
         try{
-            baseDatos.insertOrThrow(TABLA_MATERIA_PROFESOR, null , contenedor);
-            mensaje = "Materia asignada correctamente";
-        }catch (SQLException e){
-            mensaje = "Materia asignada incorrectamente";
+            SQLiteDatabase baseDatos = this.getWritableDatabase();
+            baseDatos.execSQL("INSERT INTO "+TABLA_COMENTARIO_MATERIA+" ("+COLUMNA_CM_ID_COMENTARIO+", "+COLUMNA_CM_ID_MATERIA+") VALUES ("+idComentario+", "+idMateria+")");
+            mensaje = "comentario asignado correctamente";
+        }catch(SQLException e){
+            mensaje = "Comentario asignado incorrectamente";
         }
-
         return mensaje;
     }
 
-    public ArrayList<Materia> listaDeMateriasProfesor(String dato){
-        ArrayList<Materia> materias = new ArrayList<>();
+    public ArrayList<String> listaDeMateriasProfesor(String idProfesor){
+        ArrayList<String> materias = new ArrayList<>();
         SQLiteDatabase baseDatos = this.getReadableDatabase();
-
+        String idMateria = "";
         String[] parametros={
-                dato
+                idProfesor
         };
 
         Cursor cursor = baseDatos.rawQuery("SELECT "+COLUMNA_MP_ID_MATERIA+" FROM "+TABLA_MATERIA_PROFESOR+" WHERE "+COLUMNA_MP_ID_PROFESOR+"=? ",parametros);
 
         if(cursor!=null && cursor.moveToFirst()) {
             do {
-                Materia materia = new Materia();
 
-                materia.setId(cursor.getInt(0));
-                materias.add(materia);
+                idMateria = Integer.toString(cursor.getInt(cursor.getColumnIndex(COLUMNA_MP_ID_MATERIA)));
+                materias.add(idMateria);
+
             } while (cursor.moveToNext());
+
             cursor.close();
         }else{
             Log.d("","TABLA VACIA?");
         }
-
      return materias;
     }
 

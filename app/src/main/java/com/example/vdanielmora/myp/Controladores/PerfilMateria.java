@@ -28,7 +28,7 @@ public class PerfilMateria extends AppCompatActivity {
     private TextView mNombre, mGrupo, mHorario, mAula;
     private Button btnRegresar, btnAñadirComentario;
     private ListView mLista;
-    private ArrayList<String> lista;
+    private ArrayList<String> listaImprimible;
     private ArrayAdapter adapter;
     private BaseDatos baseDatos = new BaseDatos(this);
     private ValidacionEntradas validacionEntradas;
@@ -55,21 +55,23 @@ public class PerfilMateria extends AppCompatActivity {
 
         if(objetoRecibido!=null) {
             materia = (Materia) objetoRecibido.getSerializable("objetoElegido");
-            String mensaje = materia.toString();
+
+
             mNombre.setText(materia.getNombre());
             mGrupo.setText("Grupo: "+materia.getGrupo());
             mHorario.setText("Horario: "+materia.getHorario());
             mAula.setText("Aula: "+materia.getAula());
-            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
-        }
 
+
+        }
 
         btnAñadirComentario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearComentario(mTexto.getText().toString().trim(),myPmain.getNombreUsuario());
-                lista.add(comentario.getTexto());
+
+                listaImprimible.add(comentario.getTexto());
                 mLista.setAdapter(adapter);
+
             }
         });
 
@@ -77,48 +79,20 @@ public class PerfilMateria extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), ListadoMaterias.class);
+                Intent intent = new Intent(getApplicationContext(), Busqueda.class);
                 startActivity(intent);
 
             }
         });
 
+    }
 
+    public void crearComentario(String texto, String nombreDeUsuario){
 
 
 
 
     }
 
-    private Materia deStringAObjeto(String mensaje){
-        Materia m = new Materia();
-        String nombre, grupo, horario, aula;
-        int primeraComa, segundaComa,terceraComa;
-
-        primeraComa = mensaje.indexOf(",");
-        segundaComa = mensaje.indexOf(",",primeraComa+1);
-        terceraComa = mensaje.indexOf(",",segundaComa+1);
-
-        nombre = mensaje.substring(0,primeraComa);
-        m.setNombre(nombre);
-
-        grupo = mensaje.substring(primeraComa+1,segundaComa);
-        m.setGrupo(grupo);
-
-        horario = mensaje.substring(segundaComa+1,terceraComa);
-        m.setHorario(horario);
-
-        aula = mensaje.substring(terceraComa+1,mensaje.length());
-        m.setAula(aula);
-
-        return m;
-    }
-
-    private void crearComentario(String texto, String nombreUsuario){
-        comentario.setTexto(texto);
-        comentario.setNombreUsuario(nombreUsuario);
-        baseDatos.añadirComentario(comentario);
-        materia.añadirComentario(comentario);
-    }
 
 }
