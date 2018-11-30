@@ -31,7 +31,6 @@ public class PerfilProfesor extends AppCompatActivity {
     private ArrayList<String>materiasRegistradas;
     private ArrayAdapter adapter;
     private ListView mLista;
-    private Materia materia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class PerfilProfesor extends AppCompatActivity {
         listaOriginal = baseDatos.obtenerTodasLasMaterias();
 
         profesor = null;
-        materia = new Materia();
+
         Bundle objetoEnviado = getIntent().getExtras();
 
         if(objetoEnviado!=null){
@@ -63,13 +62,11 @@ public class PerfilProfesor extends AppCompatActivity {
             mNombre.setText("Nombre: "+profesor.getNombre());
             mFacultad.setText("Facultad: "+profesor.getFacultad());
 
-            //listaMateriasProfesor = seleccionDeMaterias(listaOriginal, materiasRegistradas);
-
-            listaImprimible = deObjAString(materiasRegistradas);
+            listaMateriasProfesor = seleccionDeMaterias(listaOriginal, materiasRegistradas);
+            listaImprimible = deObjAString(listaMateriasProfesor);
 
             adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, listaImprimible);
             mLista.setAdapter(adapter);
-            mLista.setBackgroundColor(Color.GRAY);
 
             Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
         }else{
@@ -81,29 +78,31 @@ public class PerfilProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Busqueda.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
             }
         });
 
 
     }
-    /*
+
     private ArrayList<Materia> seleccionDeMaterias(ArrayList<Materia> listaOriginal, ArrayList<String> listaComparacion){
-        ArrayList<String> listaRetorno = new ArrayList<>();
+        ArrayList<Materia> listaRetorno = new ArrayList<>();
+
         for(int i = 0; i <listaComparacion.size();i++){
             for(int j=0;j<listaOriginal.size();j++){
-                if(listaComparacion.get(i).equals(listaOriginal.get(j).)){
-
+                if(listaComparacion.get(i).equals(Integer.toString(listaOriginal.get(j).getId()))){
+                    listaRetorno.add(listaOriginal.get(j));
                 }
             }
         }
-    }*/
+        return listaRetorno;
+    }
 
-    private ArrayList<String> deObjAString(ArrayList<String> listaObj){
+
+
+    private ArrayList<String> deObjAString(ArrayList<Materia> listaObj){
         ArrayList<String> listaStrings = new ArrayList<>();
         for (int i = 0; i < listaObj.size(); i++){
-            listaStrings.add(listaObj.get(i));
+            listaStrings.add(listaObj.get(i).toString());
         }
         return listaStrings;
     }

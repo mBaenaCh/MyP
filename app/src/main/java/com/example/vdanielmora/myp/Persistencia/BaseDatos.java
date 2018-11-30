@@ -125,8 +125,10 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Query para la creacion de la tabla comentario materia
     private String CREAR_TABLA_CM = "CREATE TABLE "+TABLA_COMENTARIO_MATERIA+ " ("+
             COLUMNA_CM_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
-            COLUMNA_CM_ID_COMENTARIO+ " INTEGER REFERENCES " +TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+"), "+
-            COLUMNA_CM_ID_MATERIA+" INTEGER REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+")";
+            COLUMNA_CM_ID_COMENTARIO+ " INTEGER,"+
+            COLUMNA_CM_ID_MATERIA+ " INTEGER,"+
+            "FOREIGN KEY ("+COLUMNA_CM_ID_COMENTARIO+") REFERENCES "+TABLA_COMENTARIO+"("+COLUMNA_COMENTARIO_ID+"),"+
+            "FOREIGN KEY ("+COLUMNA_CM_ID_MATERIA+") REFERENCES "+TABLA_MATERIA+"("+COLUMNA_MATERIA_ID+")"+")";
 
     private String DROP_TABLE = "DROP TABLE IF EXISTS "+NOMBRE_BASEDATOS;
 
@@ -184,8 +186,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         return mensaje;
     }
 
-
-
     //Metodo para obtener de forma ascendente, segun el nombre, todos los usuarios en la base de datos
     public List<Usuario> obtenerTodosLosUsuarios(){
         //Arreglo de columnas a obtener
@@ -235,7 +235,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     public boolean validarUsuario(String correo){
         //Arreglo de columnas a obtener
         String[] columns ={
-          COLUMNA_USUARIO_ID
+                COLUMNA_USUARIO_ID
         };
         SQLiteDatabase baseDatos = this.getReadableDatabase();
 
@@ -269,7 +269,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     public boolean validarUsuario(String correo, String contraseña){
 
         String[] columns = {
-          COLUMNA_USUARIO_ID
+                COLUMNA_USUARIO_ID
         };
 
         SQLiteDatabase baseDatos = this.getReadableDatabase();
@@ -495,17 +495,17 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         String mensaje="";
 
-            try{
-                SQLiteDatabase baseDatos = this.getWritableDatabase();
+        try{
+            SQLiteDatabase baseDatos = this.getWritableDatabase();
 
-                baseDatos.execSQL("INSERT INTO "+TABLA_MATERIA_PROFESOR+" ("+COLUMNA_MP_ID_MATERIA+", "+COLUMNA_MP_ID_PROFESOR+") VALUES ("+idMateria+", "+idProfesor+")");
+            baseDatos.execSQL("INSERT INTO "+TABLA_MATERIA_PROFESOR+" ("+COLUMNA_MP_ID_MATERIA+", "+COLUMNA_MP_ID_PROFESOR+") VALUES ("+idMateria+", "+idProfesor+")");
 
-                mensaje = "Materia asignada correctamente";
-            }catch (SQLException e){
-                mensaje = "Materia asignada incorrectamente";
-            }
+            mensaje = "Materia asignada correctamente";
+        }catch (SQLException e){
+            mensaje = "Materia asignada incorrectamente";
+        }
 
-            return mensaje;
+        return mensaje;
     }
 
     public String añadirComentarioMateria(int idComentario, int idMateria){
@@ -543,8 +543,32 @@ public class BaseDatos extends SQLiteOpenHelper {
         }else{
             Log.d("","TABLA VACIA?");
         }
-     return materias;
+        return materias;
     }
 
+    public ArrayList<String> listaComentariosMateria(String idMateria){
+        ArrayList<String> comentarios = new ArrayList<>();
+        SQLiteDatabase baseDatos = this.getReadableDatabase();
+        String idComentario = "";
+        String[] parametros={
+                idMateria
+        };
+
+        Cursor cursor = baseDatos.rawQuery("SELECT "+COLUMNA_CM_ID_COMENTARIO+" FROM "+TABLA_COMENTARIO_MATERIA+" WHERE "+COLUMNA_CM_ID_MATERIA+"=? ",parametros);
+
+        if(cursor!=null && cursor.moveToFirst()) {
+            do {
+
+                idComentario = Integer.toString(cursor.getInt(cursor.getColumnIndex(COLUMNA_CM_ID_COMENTARIO)));
+                comentarios.add(idComentario);
+
+            } while (cursor.moveToNext());
+
+            cursor.close();
+        }else{
+            Log.d("","TABLA VACIA?");
+        }
+        return comentarios;
+    }
 
 }
