@@ -16,11 +16,13 @@
 
     <Button
         android:id="@+id/btnRegresarBusquedaP"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/listaP"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="9dp"
+        android:layout_marginTop="-12dp"
+        android:drawableRight="@drawable/ic_regresar_der"
         android:text="Regresar" />
 
 </RelativeLayout>

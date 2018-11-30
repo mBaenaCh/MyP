@@ -62,6 +62,8 @@ public class ListadoMaterias extends AppCompatActivity {
                 bundleObjeto.putSerializable("objetoElegido",materiaElegida);
                 intent.putExtras(bundleObjeto);
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+
 
             }
         });
@@ -71,6 +73,8 @@ public class ListadoMaterias extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext() ,Busqueda.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
+
             }
         });
 

@@ -71,6 +71,8 @@ public class PerfilMateria extends AppCompatActivity {
 
                 listaImprimible.add(comentario.getTexto());
                 mLista.setAdapter(adapter);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
 
             }
         });
@@ -81,6 +83,8 @@ public class PerfilMateria extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), Busqueda.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
 
             }
         });
