@@ -16,6 +16,7 @@ import com.example.vdanielmora.myp.Modelo.Profesor;
 import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 import com.example.vdanielmora.myp.R;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PerfilProfesor extends AppCompatActivity {
@@ -25,12 +26,12 @@ public class PerfilProfesor extends AppCompatActivity {
     private BaseDatos baseDatos = new BaseDatos(this);
     private Profesor profesor;
     private ArrayList<String>listaImprimible;
-    private ArrayList<Materia>listaMaterias;
     private ArrayList<Materia>listaMateriasProfesor;
-    private ArrayList<Materia>listaAux;
+    private ArrayList<Materia>listaOriginal;
+    private ArrayList<String>materiasRegistradas;
     private ArrayAdapter adapter;
     private ListView mLista;
-
+    private Materia materia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,27 +43,32 @@ public class PerfilProfesor extends AppCompatActivity {
         mLista = (ListView) findViewById(R.id.listaMaterias);
 
         listaImprimible = new ArrayList<>();
-        listaMaterias = new ArrayList<>();
         listaMateriasProfesor = new ArrayList<>();
+        listaOriginal = new ArrayList<>();
+        materiasRegistradas = new ArrayList<>();
 
+        listaOriginal = baseDatos.obtenerTodasLasMaterias();
 
-        listaMaterias = baseDatos.obtenerTodasLasMaterias();
-
-        Bundle objetoEnviado = getIntent().getExtras();
         profesor = null;
-        listaAux = null;
+        materia = new Materia();
+        Bundle objetoEnviado = getIntent().getExtras();
+
         if(objetoEnviado!=null){
             profesor = (Profesor) objetoEnviado.getSerializable("objetoElegido");
+
+            String idDelProfesor = Integer.toString(profesor.getId());
+
+            materiasRegistradas = baseDatos.listaDeMateriasProfesor(idDelProfesor);
+
             mNombre.setText("Nombre: "+profesor.getNombre());
             mFacultad.setText("Facultad: "+profesor.getFacultad());
-            //listaMateriasProfesor = profesor.getMaterias();
-            //listaAux = seleccionDeMaterias(listaMaterias,listaMateriasProfesor);
 
-            listaImprimible = deObjAString(listaMaterias);
+            //listaMateriasProfesor = seleccionDeMaterias(listaOriginal, materiasRegistradas);
+
+            listaImprimible = deObjAString(materiasRegistradas);
 
             adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, listaImprimible);
             mLista.setAdapter(adapter);
-
             mLista.setBackgroundColor(Color.GRAY);
 
             Toast.makeText(this, "EL OBJETO LLEGO", Toast.LENGTH_SHORT).show();
@@ -73,30 +79,29 @@ public class PerfilProfesor extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MYPmain.class);
+                Intent intent = new Intent(getApplicationContext(), Busqueda.class);
                 startActivity(intent);
             }
         });
 
 
     }
+    /*
+    private ArrayList<Materia> seleccionDeMaterias(ArrayList<Materia> listaOriginal, ArrayList<String> listaComparacion){
+        ArrayList<String> listaRetorno = new ArrayList<>();
+        for(int i = 0; i <listaComparacion.size();i++){
+            for(int j=0;j<listaOriginal.size();j++){
+                if(listaComparacion.get(i).equals(listaOriginal.get(j).)){
 
-
-    private ArrayList<Materia> seleccionDeMaterias(ArrayList<Materia> listaOriginal, ArrayList<Materia> listaComparacion){
-        ArrayList<Materia> listaRetorno = new ArrayList<>();
-
-        for (int i = 0; i < listaComparacion.size(); i++){
-            if(listaOriginal.get(i).getId() == listaComparacion.get(i).getId()){
-                listaRetorno.add(listaOriginal.get(i));
+                }
             }
         }
-        return listaRetorno;
-    }
+    }*/
 
-    private ArrayList<String> deObjAString(ArrayList<Materia> listaObj){
+    private ArrayList<String> deObjAString(ArrayList<String> listaObj){
         ArrayList<String> listaStrings = new ArrayList<>();
         for (int i = 0; i < listaObj.size(); i++){
-            listaStrings.add(listaObj.get(i).toString());
+            listaStrings.add(listaObj.get(i));
         }
         return listaStrings;
     }

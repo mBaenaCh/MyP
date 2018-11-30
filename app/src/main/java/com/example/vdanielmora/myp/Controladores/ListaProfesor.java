@@ -33,8 +33,6 @@ public class ListaProfesor extends AppCompatActivity {
         profesorElegido = new Profesor();
         Bundle objetoEnviado = getIntent().getExtras();
 
-
-
         if (objetoEnviado!=null){
             listaObjetos = (ArrayList<Profesor>) objetoEnviado.getSerializable("objetosP");
         }
@@ -62,7 +60,7 @@ public class ListaProfesor extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MYPmain.class);
+                Intent intent = new Intent(getApplicationContext(),Busqueda.class);
                 startActivity(intent);
             }
         });

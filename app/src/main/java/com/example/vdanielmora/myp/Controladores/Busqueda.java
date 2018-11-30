@@ -14,6 +14,7 @@ import com.example.vdanielmora.myp.Persistencia.BaseDatos;
 import com.example.vdanielmora.myp.R;
 
 import java.io.BufferedReader;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,6 +140,60 @@ public class Busqueda extends AppCompatActivity {
     public ArrayList llenadoEncontradoProfesores(ArrayList<Profesor> lista, String dato){
         //Se crea una nueva lista de tipo "objeto"
         ArrayList<Profesor> listaDeEncontrados = new ArrayList<>();
+        // Le quitamos tildes al dato
+        dato = Normalizer.normalize(dato,Normalizer.Form.NFKD);
+        dato = dato.replaceAll("[^a-z,^A-Z,^0-9]", "");
+        //Se recorre la lista que se recibio como parametro
+        for(int i =0; i<lista.size();i++){
+            //Del elemento en la posicion "i", que es un objeto profesor
+            //Retornamos el dato que este objeto tiene como "nombre"
+            String nombre = lista.get(i).getNombre().toString().toLowerCase().trim();
+            //Aqui le quitamos las tildes a el string
+            nombre =Normalizer.normalize(nombre,Normalizer.Form.NFKD);
+            nombre = nombre.replaceAll("[^a-z,^A-Z,^0-9]", "");
+            //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
+            if(nombre.contains(dato.toString().toLowerCase().trim().toLowerCase())){
+                //Si es el caso entonces lo añadimos a la nueva lista de objetos encontrados de tipo "profesor"
+                listaDeEncontrados.add(lista.get(i));
+
+            }
+            //De lo contrario seguimos iterando
+        }
+        //Retornamos la lista de objetos "profesor" que corresponde a los encontrados segun el dato ingresado
+        return listaDeEncontrados;
+    }
+
+    public ArrayList llenadoEncontradoMaterias(ArrayList<Materia> lista, String dato){
+        //Se crea una nueva lista de tipo "objeto"
+        ArrayList<Materia> listaDeEncontrados = new ArrayList<>();
+        //Aqui el dato le quitamos tildes
+        dato = Normalizer.normalize(dato,Normalizer.Form.NFKD);
+        dato = dato.replaceAll("[^a-z,^A-Z,^0-9]", "");
+
+        //Se recorre la lista que se recibio como parametro
+        for(int i = 0; i<lista.size();i++){
+            //Del elemento en la posicion "i", que es un objeto materia
+            //Retornamos el dato que este objeto tiene como "nombre"
+            String nombre = lista.get(i).getNombre().toString().trim().toLowerCase();
+            //Aqui le quitamos las tildes a el string
+            nombre =Normalizer.normalize(nombre,Normalizer.Form.NFKD);
+            nombre = nombre.replaceAll("[^a-z,^A-Z,^0-9]", "");
+            //Comparamos si este dato es igual a lo que ingresamos en el texto de busqueda
+            if(nombre.contains(dato.toLowerCase().trim().toString())){
+                //Si es el caso entonces l oañadimos a la nueva lista de objetos encontrados de tipo "materia"
+                listaDeEncontrados.add(lista.get(i));
+            }
+            //De lo contrario seguimos iterando
+        }
+        //Retornamos la lista de objetos "materia" que corresponden a los encontrados segun el dato ingresado
+        return listaDeEncontrados;
+    }
+
+
+    /*
+    public ArrayList llenadoEncontradoProfesores(ArrayList<Profesor> lista, String dato){
+        //Se crea una nueva lista de tipo "objeto"
+        ArrayList<Profesor> listaDeEncontrados = new ArrayList<>();
 
         //Se recorre la lista que se recibio como parametro
         for(int i =0; i<lista.size();i++){
@@ -155,8 +210,9 @@ public class Busqueda extends AppCompatActivity {
         }
         //Retornamos la lista de objetos "profesor" que corresponde a los encontrados segun el dato ingresado
         return listaDeEncontrados;
-    }
+    }*/
 
+    /*
     public ArrayList llenadoEncontradoMaterias(ArrayList<Materia> lista, String dato){
         //Se crea una nueva lista de tipo "objeto"
         ArrayList<Materia> listaDeEncontrados = new ArrayList<>();
@@ -175,6 +231,6 @@ public class Busqueda extends AppCompatActivity {
         }
         //Retornamos la lista de objetos "materia" que corresponden a los encontrados segun el dato ingresado
         return listaDeEncontrados;
-    }
+    }*/
 
 }
