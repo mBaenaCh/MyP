@@ -37,4 +37,9 @@ public class Comentario {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+
+    @Override
+    public String toString() {
+        return getTexto();
+    }
 }

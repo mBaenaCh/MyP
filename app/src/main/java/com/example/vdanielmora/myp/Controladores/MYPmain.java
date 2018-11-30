@@ -22,6 +22,7 @@ public class MYPmain extends AppCompatActivity {
    private  Button registro,inicio, btnMateria, btnProfesor;
    private BaseDatos baseDatos = new BaseDatos(this);
    private ValidacionEntradas validacionEntradas;
+   private String nombreUsuario;
 
 
     @Override
@@ -52,7 +53,7 @@ public class MYPmain extends AppCompatActivity {
             public void onClick(View view) {
 
                 validacionDesdeBD();
-
+                nombreUsuario = mCorreo.getText().toString();
 
             }
         });
@@ -104,7 +105,7 @@ public class MYPmain extends AppCompatActivity {
     }
 
     public String getNombreUsuario(){
-        return this.mCorreo.getText().toString().trim();
+        return this.nombreUsuario;
     }
 
 

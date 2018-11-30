@@ -1,4 +1,4 @@
-#Thu Nov 29 19:56:00 COT 2018
-base.0=C\:\\Users\\Victor\\Desktop\\Definiti\\MyP\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Fri Nov 30 00:59:47 COT 2018
+base.0=C\:\\Users\\user\\libreError\\MyP\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
