@@ -53,6 +53,8 @@ public class ListaProfesor extends AppCompatActivity {
                 bundleObjeto.putSerializable("objetoElegido",profesorElegido);
                 intent.putExtras(bundleObjeto);
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+
 
             }
         });
@@ -62,6 +64,8 @@ public class ListaProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Busqueda.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
             }
         });
 

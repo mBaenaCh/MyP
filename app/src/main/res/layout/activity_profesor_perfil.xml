@@ -10,41 +10,40 @@
         android:id="@+id/txtPPNombre"
         android:layout_width="355dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-66dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPPFacultad"
         android:layout_width="358dp"
         android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre"
-        tools:layout_editor_absoluteX="-69dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPPNombre" />
 
     <TextView
         android:id="@+id/lblMateriasHorarios"
         android:layout_width="358dp"
         android:layout_height="45dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif"
         android:text="Materias y Horarios:"
+        android:textAlignment="center"
         android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +54,7 @@
     <ListView
         android:id="@+id/listaMaterias"
         android:layout_width="375dp"
-        android:layout_height="159dp"
+        android:layout_height="203dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
@@ -66,14 +65,17 @@
 
     <Button
         android:id="@+id/btnRegresarListaP"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         android:text="Regresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaMaterias" />
+        app:layout_constraintTop_toBottomOf="@+id/listaMaterias"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
